@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>History & Rules of CSS</title>
+  <meta name="description" content="Overview of CSS history, evolution, and basic rule syntax.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Myriam">
+</head>
+<body>
+  <header>
+    <h1>CSS: History & Basic Rules</h1>
+    <nav>
+       <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History of the Web & Browsers</a></li>
+                <li><a href="security.html">Web Security</a></li>
+                <li><a href="mobile-first.html">Mobile-First Development</a></li>
+                <li><a href="stats.html">Internet Stats</a></li>
+                 <li><a href="csshistoryandrules.html">CSS History And Rules</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <header><h2>Origins and Evolution of CSS</h2></header>
+      <p>
+        CSS (Cascading Style Sheets) was first proposed by Håkon Wium Lie on October 10, 1994, while he worked at CERN. :contentReference[oaicite:1]{index=1}  
+        It emerged to separate style from content, allowing HTML to remain semantic while CSS handled presentation.  
+        The first official specification, CSS Level 1, became a W3C Recommendation in 1996. :contentReference[oaicite:2]{index=2}  
+        Over time, CSS grew: CSS2 introduced positioning and media rules; CSS3 moved toward a modular architecture, letting each module (e.g. Flexbox, Grid, Transitions) evolve independently. :contentReference[oaicite:3]{index=3}  
+      </p>
+      <center>
+        <img src="https://image.slidesharecdn.com/evolutionofcss-131209093538-phpapp02/95/evolution-of-css-13-638.jpg?cb=1417442663" 
+             alt="Timeline of CSS evolution" width="30%" />
+        <figcaption>Figure 1: CSS evolution from CSS1 through modules. (<a href="https://www.slideshare.net/slideshow/evolution-of-css/29039469">Source</a>)</figcaption>
+      </center>
+    </article>
+
+<article>
+  <header>
+    <h2>Core Concepts: CSS Syntax & Rules</h2>
+  </header>
+  <p>CSS (Cascading Style Sheets) is the language used to style and layout web pages. A CSS rule defines how HTML elements should be displayed. Each rule consists of a selector and a declaration block.</p>
+  <p><strong>Selectors</strong> target HTML elements, classes, or IDs.</p>
+  <p><strong>Declaration blocks</strong> enclose one or more declarations, each specifying a property and its corresponding value.</p>
+  <p><strong>Properties</strong> define aspects like color, size, or spacing.</p>
+  <p><strong>Values</strong> specify the settings for the properties.</p>
+  <p>The "cascade" refers to the order of CSS rules and their specificity, determining which styles are applied when multiple rules target the same element.</p>
+  <p>CSS also includes <strong>at-rules</strong>, such as <code>@media</code> for responsive design or <code>@import</code> for linking external stylesheets.</p>
+
+      <center>
+        <img src="https://www.w3schools.com/css/img_selector.gif" 
+             alt="Some CSS rules " width="30%" />
+        <figcaption>Figure 2: Some important css rules. (<a href="https://www.w3schools.com/css/css_syntax.ASP">Source</a>)</figcaption>
+      </center>
+    </article>
+
+   <article>
+  <header>
+    <h2>Modern CSS & Best Practices</h2>
+  </header>
+  <p>As of 2025, CSS has evolved into a dynamic, living standard, with continuous updates rather than distinct version releases. This approach ensures that web development stays aligned with current design needs and technological advancements.</p>
+  <p>Key features enhancing CSS in 2025 include:</p>
+  <ul>
+    <li><strong>CSS Variables (Custom Properties):</strong> Enable theming and dynamic styling by defining reusable values.</li>
+    <li><strong>Grid Layout & Subgrid:</strong> Facilitate complex, responsive layouts with nested grid support.</li>
+    <li><strong>Aspect-Ratio Property:</strong> Maintain consistent element proportions across various screen sizes.</li>
+    <li><strong>New Color Functions:</strong> Functions like <code>color-mix()</code> and <code>color-contrast()</code> assist in creating accessible and dynamic color schemes.</li>
+  </ul>
+  <p>Adopting best practices is crucial for maintainable and scalable CSS:</p>
+  <ul>
+    <li><strong>Low Specificity:</strong> Keep selectors simple to avoid specificity conflicts.</li>
+    <li><strong>Modular Organization:</strong> Structure CSS logically to enhance readability and maintainability.</li>
+    <li><strong>Avoid Overly Complex Selectors:</strong> Simplify selectors to improve performance and ease of understanding.</li>
+  </ul>
+</article>
+
+
+    <article>
+      <header><h2>Conclusion</h2></header>
+      <p>
+        CSS transformed web development by decoupling style from content. From its humble 1990s beginnings to a modular modern standard, CSS powers the look and layout of most websites today.  
+        Understanding CSS rules and syntax is essential for maintainable, responsive, and elegant design.
+      </p>
+    </article>
+
+    <br><br><br>
+  </main>
+
+  <footer>
+    <small>
+      <p>&copy; 2025 Semantic Web. All rights reserved.</p>
+      <p><em>Last updated: September 27, 2025</em></p>
+      <p>References: See the complete list on the <a href="references.html">References page</a>.</p>
+    </small>
+  </footer>
+</body>
+</html>
