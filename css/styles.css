@@ -1,0 +1,1595 @@
+:root {
+  /* Nude Soft Palette */
+  --primary: #c9a88d;
+  --primary-dark: #b08a6d;
+  --primary-light: #f6ede5;
+  --primary-glow: rgba(201, 168, 141, 0.25);
+  
+  --accent: #d9bca7;
+  --accent-dark: #c3a48c;
+  --accent-light: #f9f4ef;
+  
+  --neutral-50: #fbf9f7;
+  --neutral-100: #f7f3f0;
+  --neutral-200: #e8e2dd;
+  --neutral-300: #d6ccc2;
+  --neutral-600: #6b5f57;
+  --neutral-700: #554b45;
+  --neutral-800: #3f3732;
+  --neutral-900: #2b2623;
+  
+  --success: #9dc183;
+  --success-light: #e9f2e1;
+  --warning: #d4a373;
+  --warning-light: #fceedd;
+
+  --green: #9dc183;
+  --orange: #d4a373;
+  --blue: #a3b18a;
+  --purple: #c9a9b9;
+  --brown: #a47c5c;
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px var(--primary-glow);
+  
+  --font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  
+  --max-width: 1200px;
+  --content-width: 920px;
+  
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ========== GLOBAL ========== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  font-family: var(--font) !important;
+  line-height: 1.7 !important;
+  color: var(--neutral-700) !important;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 50%, #fce7f3 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* ========== BODY FIXES ========== */
+/* FIXED: Ensure all paragraphs, lists, figures, and captions inherit visible color */
+main p,
+main ul,
+main ol,
+main li,
+main figure,
+main figcaption {
+  color: var(--neutral-700);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+main img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--neutral-600);
+  text-align: center;
+  margin-top: 0.3rem;
+}
+
+/* ========================= SITE HEADER ========================= */
+/* ========================= SITE HEADER ========================= */
+/* ========================= SITE HEADER (FIXED) ========================= */
+/* ========================= SITE HEADER (FIXED) ========================= */
+.site-header {
+  width: 100%; /* full viewport width */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  position: relative;
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+  padding: 1.5rem 0; /* Vertical padding only */
+  transition: all var(--transition-base);
+  
+  /* CRITICAL FIX: Ensure the header is not trying to center its content */
+  display: block; /* Treat the header as a simple block container */
+}
+
+.site-header:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Paragraph below header (Keep if used, adjusted for block centering) */
+.site-header > p {
+  margin-top: 0.75rem;
+  color: var(--neutral-600);
+  font-size: 0.95rem;
+  text-align: center; 
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flex container for title + buttons */
+.site-header .header-inner {
+  /* CRITICAL FIX: Center the ENTIRE block on the page, up to max-width */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width); /* Use your defined variable for consistency */
+  
+  /* Internal Flex Layout: Pushes h1 and links to the edges of this block */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 100%;
+  padding: 0 2rem; /* horizontal padding inside the centered block */
+  gap: 2rem;
+  
+  /* border: 1px solid; REMOVED: This was just for debugging */
+}
+
+/* Title */
+.site-header .header-inner h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: left;
+  
+  /* Ensure it's treated as a standard, compact flex item */
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+/* Button container (The white box containing the links) */
+.header-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-shrink: 0;
+  
+  /* CRITICAL FIX: Remove any margin-left: auto that competes with space-between */
+  margin: 0; 
+  
+  /* Reapply the white box styles */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+}
+
+/* Buttons (keep intact) */
+.header-links a,
+.site-header .lang-link {
+  color: var(--neutral-700);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0; /* Remove internal padding if links already have padding from .header-links */
+  /* ... keep other button styles ... */
+  transition: all var(--transition-base);
+  position: relative;
+  white-space: nowrap;
+}
+.header-links a:hover,
+.site-header .lang-link:hover {
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+/* Mobile responsiveness (FIXED to rely on the clean structure) */
+@media (max-width: 768px) {
+  .site-header .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+  .header-links {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem; /* Restore padding on links box */
+  }
+  .site-header .header-inner h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================= NAVIGATION ========================= */
+nav,
+.nav-bar {
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  padding: 1rem 2rem;
+  margin: 0 auto 2rem;
+  max-width: var(--max-width);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for subtle depth */
+nav:hover,
+.nav-bar:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* === Nav Layout === */
+nav ul,
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+/* === Nav Links === */
+nav li a,
+.nav-bar li a {
+  position: relative;
+  padding: 0.6rem 0;
+  font-weight: 600;
+  color: var(--neutral-700);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Smooth underline animation */
+nav li a::after,
+.nav-bar li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+nav li a:hover::after,
+.nav-bar li a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Hover / Active states */
+nav li a:hover,
+.nav-bar li a:hover {
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+nav li a[aria-current="page"],
+.nav-bar li a[aria-current="page"] {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+
+
+/* ========== DROPDOWN - FIXED ========== */
+#research-dropdown {
+  position: relative;
+}
+
+#research-dropdown > summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--neutral-700);
+  padding: 0.75rem 1.25rem;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  user-select: none;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+#research-dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+#research-dropdown > summary::marker {
+  display: none;
+}
+
+#research-dropdown > summary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: -1;
+}
+
+#research-dropdown > summary::after {
+  display: none;
+}
+
+#research-dropdown > summary:hover::before,
+#research-dropdown[open] > summary::before {
+  opacity: 1;
+}
+
+#research-dropdown > summary:hover,
+#research-dropdown[open] > summary {
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+#research-dropdown[open] > summary {
+  font-weight: 700;
+}
+
+/* Nested details inside dropdown */
+#research-dropdown details {
+  margin-top: 0.75rem;
+  margin-left: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: dropdownSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#research-dropdown details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--neutral-800);
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  user-select: none;
+}
+
+#research-dropdown details summary:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+#research-dropdown details p,
+#research-dropdown details ul,
+#research-dropdown details pre {
+  margin-top: 0.75rem;
+  color: var(--neutral-700);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+#research-dropdown details ul {
+  margin-left: 1.5rem;
+}
+
+#research-dropdown details pre {
+  background: var(--neutral-100);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+#research-dropdown details code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== HAMBURGER MENU ========== */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid var(--primary-light);
+  color: var(--primary-dark);
+  position: absolute;
+  top: 1.25rem;
+  right: 2rem;
+  z-index: 1001;
+  user-select: none;
+  transition: all var(--transition-base);
+  border-radius: var(--radius-md);
+}
+
+.hamburger:hover {
+  background: var(--primary-light);
+  transform: scale(1.05);
+}
+
+/* Mobile Navigation Toggle */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  
+  .site-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  nav,
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    flex-direction: column;
+    padding: 5rem 1.5rem 2rem;
+    border-radius: 0;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .nav-toggle:checked ~ nav,
+  .nav-toggle:checked ~ .nav-bar {
+    right: 0;
+  }
+  
+  nav ul,
+  .nav-bar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  
+  nav li a,
+  .nav-bar li a {
+    width: 100%;
+    text-align: left;
+  }
+  
+  #research-dropdown {
+    width: 100%;
+  }
+  
+  #research-dropdown details {
+    margin-left: 0;
+  }
+}
+
+/* ========== MAIN CONTENT ========== */
+main {
+  flex: 1;
+  max-width: var(--content-width);
+  margin: 0 auto 4rem;
+  padding: 2rem 2rem;
+  width: 100%;
+  background-color: transparent;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--neutral-200);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  position: relative;
+}
+
+.page-header h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: var(--radius-full);
+}
+
+/* Welcome Box */
+.welcome-box {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 3.5rem 4rem;
+  max-width: var(--content-width);
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: var(--neutral-800);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.8;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-box::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 60%);
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+.welcome-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== BUTTONS ========== */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  text-decoration: none;
+  margin-top: 1.5rem;
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-xl), 0 0 30px var(--primary-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn-back {
+  background: white;
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+/* FIX: Active state for smooth button press feedback */
+.btn-back:active {
+    background-color: var(--primary); 
+    color: white;
+    /* Push button down by 1px */
+    transform: translateY(-50%) translateY(1px); 
+    /* Remove shadow on press */
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); 
+}
+
+.btn-back:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateX(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Status Buttons */
+.status-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  cursor: default;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.status-btn.completed {
+  background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+  color: white;
+}
+
+.status-btn.in-progress {
+  background: linear-gradient(135deg, var(--warning) 0%, #d97706 100%);
+  color: white;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* ========== CARDS ========== */
+.welcome-cards,
+.cards-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem;
+  transition: all var(--transition-slow);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.card h3 {
+  color: var(--neutral-900);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.card h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin-top: 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.card p {
+  color: var(--neutral-600);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.card a {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.card a:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+/* ========== ARTICLE & CONTENT ========== */
+/* ============================================== */
+/* Custom Styles for Dashboard (RTL & Nude Palette) */
+/* ============================================== */
+
+/* Note: It is assumed that global variables (like :root { --primary: ... })
+   and general resets (html, body, a, p, etc.) exist outside this block. */
+
+/* ============================================== */
+/* GLOBAL DASHBOARD LAYOUT */
+/* ============================================== */
+
+/* Note: It is assumed that global variables (like :root { --primary: ... })
+   and general resets (html, body, a, p, etc.) exist outside this block. */
+
+/* ============================================== */
+/* GLOBAL DASHBOARD LAYOUT (MODIFIED FOR WIDE, CENTERED VIEW) */
+/* ============================================== */
+
+/* Main Container: Modified for a single-column, wide, and centered dashboard look */
+.dashboard-container {
+    /* Significantly increased max-width for a full-page feel */
+    max-width: 95vw; 
+    /* Keeps the dashboard centered on the page */
+    margin: 2rem auto 4rem; 
+    padding: 0 2rem;
+    gap: 2rem;
+    
+    /* Changed to a single-column Grid Layout (stacking modules vertically) */
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for all modules */
+    grid-template-areas: 
+        "map-module"
+        "density-module"
+        "final-thoughts";
+}
+
+/* Module Styling */
+.module {
+    /* Use the same styling as your existing 'article' or 'card' for consistency */
+    background: var(--neutral-50); /* Light background for content */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--neutral-100);
+    transition: box-shadow var(--transition-base);
+}
+.module:hover {
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.module h2 {
+    color: var(--neutral-900);
+    font-size: 1.875rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    position: relative;
+    /* Remove padding/border from existing h2 style */
+    padding-left: 0; 
+    border-left: none;
+    padding-right: 1.5rem; /* Add padding to the right for the RTL marker */
+    border-bottom: none; /* Removed redundant border-bottom from old style */
+    padding-bottom: 0;
+}
+
+/* RTL Heading Marker */
+.module h2::before {
+    content: "";
+    position: absolute;
+    right: 0; /* Position marker on the right for RTL */
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 60%;
+    background: linear-gradient(180deg, var(--primary), var(--accent));
+    border-radius: var(--radius-full);
+}
+
+.module-intro {
+    font-size: 1.0625rem;
+    color: var(--neutral-700);
+    margin-bottom: 2rem;
+    text-align: right; /* Resetting text align for RTL text flow */
+}
+
+/* Grid Area Assignments (Updated for single column) */
+.map-module { grid-area: map-module; }
+.density-module { grid-area: density-module; }
+.final-thoughts { grid-area: final-thoughts; }
+
+
+/* ---------------------------------- */
+/* 2. Header & Footer                 */
+/* ---------------------------------- */
+
+.site-header {
+    background-color: var(--neutral-900);
+    color: var(--neutral-50);
+    padding: 2rem 1rem;
+    border-bottom: 5px solid var(--primary);
+    text-align: center;
+    position: relative; /* Needed for positioning .btn-back */
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* Removed padding 0 2rem as this is now handled by the .site-header padding */
+}
+
+.site-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 70px; /* Space for the back button */
+}
+
+/* Styling for the new Arabic "Back" button */
+.btn-back {
+    /* Style consistency */
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--neutral-200); /* Use a light color for a back button */
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap; /* Prevents text wrap */
+    
+    /* Position the button relative to the header */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* Position on the far LEFT of the header */
+    left: 2rem; 
+}
+
+.btn-back:hover {
+    background-color: var(--primary-light);
+    color: var(--neutral-900);
+}
+
+.site-header .header-intro {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    max-width: 800px;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0.9;
+    text-align: center;
+}
+
+footer {
+    border-top: 1px solid var(--neutral-300);
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--neutral-600);
+    background-color: var(--neutral-50);
+}
+
+
+/* ============================================== */
+/* 3. LATENCY MAP VISUALS (CSS-Only :target INTERACTION) */
+/* ============================================== */
+
+.interactive-map {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: var(--neutral-200); /* Light neutral background for map */
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    /* Removing redundant padding from old styles */
+    padding: 0;
+}
+
+.region {
+    display: block;
+    padding: 12px 20px;
+    margin: 8px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    text-decoration: none; /* Crucial for map anchors */
+    font-size: 0.875rem; /* Consistency */
+    box-shadow: var(--shadow-sm); /* Consistency */
+}
+.region:hover {
+    box-shadow: var(--shadow-sm), 0 0 10px rgba(201, 168, 141, 0.6); /* Glow from primary */
+    transform: scale(1.05) translateY(-2px);
+    opacity: 1; /* Override old opacity rule */
+}
+
+/* Latency coloring based on your palette */
+.region-low-latency { background: var(--success); color: var(--neutral-900); }
+.region-medium-latency { background: var(--primary); color: white; }
+.region-high-latency { background: var(--warning); color: var(--neutral-900); }
+.region-extreme-latency { background: var(--brown); color: white; }
+
+
+/* ---------------------------------- */
+/* 4. Stats Panels (CSS Target Logic) */
+/* ---------------------------------- */
+
+.stats-data-container {
+    background: var(--neutral-100);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+   text-align: center;
+}
+.stats-data-container h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--neutral-200);
+    color: var(--neutral-700); /* Re-applied h3 color from old module h3 */
+    font-size: 1.25rem; /* Re-applied h3 size from old module h3 */
+    font-weight: 700; /* Re-applied h3 font weight from old module h3 */
+}
+
+/* --- CSS :target Logic --- */
+
+/* Hide all panels by default */
+.stats-data-container .stats-panel {
+    display: none; 
+    padding: 1.5rem;
+    border: 2px solid var(--primary-light);
+    border-radius: var(--radius-lg);
+    background-color: var(--neutral-100);
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 1. Show the targeted panel when its ID is in the URL hash */
+.stats-data-container .stats-panel:target {
+    display: block;
+}
+
+/* 2. Default View: Show the default view initially */
+.stats-data-container .default-view {
+    display: block;
+}
+
+/* 3. Hide the Default View when ANY other panel is targeted */
+.stats-data-container .stats-panel:target ~ .default-view,
+.stats-data-container .stats-panel:target + .default-view {
+    display: none;
+}
+/* --- End CSS :target Logic --- */
+
+
+.stats-panel h4 {
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.stat-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 1.2rem;
+    /* Replaced inline-block width logic with flex basis */
+    flex: 1 1 48%; 
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--neutral-100);
+    vertical-align: top; 
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-dark);
+}
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--neutral-600);
+    margin-top: 0.25rem; /* Consistency with old style */
+}
+
+.chart-detail {
+    font-size: 0.875rem;
+    color: var(--neutral-600);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.reset-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--neutral-200);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.3s;
+    text-decoration: none; /* Crucial for reset links */
+    font-weight: 700;
+}
+
+.reset-link:hover {
+    background-color: var(--primary-light);
+    color: var(--neutral-900);
+    text-decoration: underline;
+}
+
+/* Keyframe for fade-in effect (used in article and stats-panel) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================== */
+/* 5. DENSITY VISUALS (CSS-Only :checked INTERACTION) */
+/* ============================================== */
+
+.interactive-control {
+    text-align: center;
+}
+
+.chart-container {
+    margin-top: 2rem;
+}
+
+.chart-item {
+    margin-bottom: 1.5rem;
+    background: var(--neutral-100);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-base);
+    border-right: 4px solid var(--primary-light);
+}
+
+.chart-item:hover {
+    background: var(--accent-light);
+    border-right: 4px solid var(--primary);
+}
+
+.chart-label {
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--neutral-800);
+}
+
+.chart-bar {
+    width: 100%;
+    height: 14px;
+    background: var(--neutral-300);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    box-shadow: inset var(--shadow-sm);
+    margin-bottom: 0.5rem; /* Consistency */
+}
+
+.chart-fill {
+    height: 100%;
+    /* Default width is set via the individual bar classes below */
+    background: linear-gradient(90deg, var(--primary-dark), var(--success)); 
+    transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+    text-align: left; /* Consistency */
+}
+
+/* --- Initial Bar Widths (Default State) --- */
+.chart-bar.bar-mena .chart-fill { width: 45%; }
+.chart-bar.bar-europe .chart-fill { width: 75%; }
+.chart-bar.bar-global .chart-fill { width: 55%; }
+
+/* --- CSS Checkbox Hack Logic (Simulated Slider) --- */
+
+/* 1. Hide the radio buttons */
+.css-slider-buttons input[type="radio"] {
+    display: none;
+}
+
+/* 2. Style the Labels (Buttons) */
+.css-slider-buttons {
+    display: flex; /* Changed from text-align: center to flex for better control */
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+    background-color: var(--success-light); /* Background for the control group */
+    border-radius: var(--radius-sm);
+}
+.css-slider-buttons label {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--neutral-200);
+    color: var(--neutral-700);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 700;
+    border: 1px solid var(--neutral-300);
+}
+
+/* Highlight the selected button */
+.css-slider-buttons input[type="radio"]:checked + label {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+/* 3. Apply Fill Widths Based on Selected Radio Button (using ~ selector) */
+
+/* When progress-low (45%) is checked */
+#progress-low:checked ~ .chart-container .bar-mena .chart-fill { width: 45%; } 
+#progress-low:checked ~ .chart-container .bar-europe .chart-fill { width: 75%; } /* Kept original state for 'Europe' to show variability */
+#progress-low:checked ~ .chart-container .bar-global .chart-fill { width: 55%; }
+/* Effect when "Medium" (65%) is selected */
+#progress-medium:checked ~ .chart-container .bar-mena .chart-fill { width: 55%; }
+#progress-medium:checked ~ .chart-container .bar-europe .chart-fill { width: 85%; } 
+#progress-medium:checked ~ .chart-container .bar-global .chart-fill { width: 65%; } 
+
+/* Effect when "High" (85%) is selected */
+#progress-high:checked ~ .chart-container .bar-mena .chart-fill { width: 65%; }
+#progress-high:checked ~ .chart-container .bar-europe .chart-fill { width: 95%; } 
+#progress-high:checked ~ .chart-container .bar-global .chart-fill { width: 85%; } 
+/* --- End CSS Checkbox Hack Logic --- */
+
+
+/* ============================================== */
+/* 6. Conclusion and Utility */
+/* ============================================== */
+.callout-block {
+    /* Reuses existing blockquote styles from your original CSS, but adjusted for RTL border */
+    background: var(--primary-light);
+    border-right: 4px solid var(--primary); /* RTL border */
+    border-left: none;
+    padding: 1.5rem 2rem;
+    /* Adjusted border-radius for RTL */
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg); 
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--neutral-800);
+    box-shadow: var(--shadow-sm);
+    /* Reverted to standard font weight/style */
+    font-weight: normal; 
+    font-size: 1rem;
+}
+
+.callout-block strong {
+    color: var(--neutral-900);
+}
+
+.article ul {
+    list-style: disc;
+    padding-right: 1.5rem;
+    margin-top: 0.5rem;
+    list-style: none; /* Removing old style for consistency with new ul styling */
+}
+
+.article ul a {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+.final-thoughts ul {
+    list-style: none;
+    padding-right: 0;
+}
+.final-thoughts li {
+    position: relative;
+    padding-right: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.final-thoughts li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--success);
+    font-weight: 700;
+}
+
+.btn-primary {
+    /* Ensure your main button style is defined for the "Go to Top" link */
+    display: inline-block;
+    background: var(--primary);
+    color: var(--neutral-900);
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    text-align: center;
+    margin-top: 1rem;
+}
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ============================================== */
+/* Media Queries for Responsiveness */
+/* ============================================== */
+@media (max-width: 900px) {
+    .dashboard-container {
+        /* Keep single column layout */
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "map-module"
+            "density-module"
+            "final-thoughts";
+        padding: 0 1rem;
+    }
+    .module {
+        padding: 2rem 1.5rem;
+    }
+    .stat-card {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .stat-card:nth-child(2n) {
+        margin-left: 0;
+    }
+    .module h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ensure the `stat-card` is fully responsive on small screens */
+@media (max-width: 500px) {
+    .stats-data-container .stat-card {
+        width: 100%; /* Ensure full width on very small screens */
+        margin-left: 0;
+        flex: 1 1 100%; /* Ensure flex items take full width */
+    }
+    .stat-cards-wrapper {
+        gap: 0.5rem;
+    }
+}
+
+/* Ensure the header has position: relative to contain the absolutely positioned button */
+.site-header {
+    position: relative;
+    /* You may need to ensure your existing header has enough padding/height 
+       to accommodate the button without overlap. */
+}
+.cv {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem 3rem 4rem;
+  margin: 2rem auto;
+  color: var(--neutral-700);
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.cv-header {
+  text-align: center;
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cv-header h1 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.cv-header p { color: var(--neutral-600); }
+.cv-header a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.cv-header a:hover { text-decoration: underline; }
+
+.cv-section h2 {
+  color: var(--primary-dark);
+  border-left: 4px solid var(--primary);
+  padding-left: 10px;
+  font-size: 1.3rem;
+  margin: 2.5rem 0 1rem;
+}
+.cv-section h3 { color: var(--neutral-700); margin-bottom: 0.25rem; font-size: 1.1rem; }
+.cv-section h4 { color: var(--primary-dark); margin-top: 1rem; font-size: 1rem; }
+.cv-section ul { margin-left: 1.2rem; list-style: disc; }
+.cv-section li { margin-bottom: 0.4rem; font-size: 0.95rem; line-height: 1.5; }
+
+.cv-section:not(:last-child) {
+  border-bottom: 1px dashed var(--primary-light);
+  padding-bottom: 1rem;
+}
+.edu-item, .exp-item { margin-bottom: 1.2rem; }
+.edu-item h3, .exp-item h3 { font-weight: 600; }
+
+@media (max-width: 768px) {
+  .cv { padding: 2rem 1.5rem; }
+  .cv-header h1 { font-size: 1.6rem; }
+  .cv-section h2 { font-size: 1.1rem; }
+}
+
+/* ========================= SCHEDULE ========================= */
+#schedule {
+  font-family: var(--font);
+  margin: 2rem auto;
+  max-width: 1000px;
+  background: rgba(255,255,255,0.9);
+  padding: 2rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+#schedule h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+#schedule .schedule-grid {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+#schedule .times {
+  display: grid;
+  grid-template-rows: repeat(10, 60px);
+  text-align: right;
+  font-size: 14px;
+  color: var(--neutral-600);
+}
+#schedule .days {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+#schedule .day-name {
+  text-align: center;
+  font-weight: bold;
+  padding: 6px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary);
+  border-radius: var(--radius-sm);
+}
+#schedule .day {
+  display: grid;
+  grid-template-rows: repeat(10, 60px);
+  border-left: 1px solid var(--neutral-200);
+  position: relative;
+  background: white;
+  border-radius: var(--radius-sm);
+}
+#schedule .class {
+  margin: 3px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+#schedule .class a { color: white; text-decoration: none; }
+#schedule .green  { background: var(--green); }
+#schedule .orange { background: var(--orange); }
+#schedule .brown  { background: var(--brown); }
+#schedule .blue   { background: var(--blue); }
+#schedule .purple { background: var(--purple); }
+
+/* Modal */
+#schedule .modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+#schedule .modal:target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#schedule .modal-content {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  border-radius: var(--radius-lg);
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+#schedule .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  color: var(--neutral-800);
+}
+
+/* ========================= FOOTER ========================= */
+footer {
+  background: linear-gradient(to right, var(--primary-dark), var(--accent-dark));
+  color: #f0f0f0;
+  padding: 2rem 1.5rem;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--primary);
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+display: block;}
+footer a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+footer a:hover { text-decoration: underline; }
+footer p { margin: 0.25rem 0; }

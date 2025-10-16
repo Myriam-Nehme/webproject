@@ -6,18 +6,29 @@
     <meta name="description" content="Explore the history and evolution of web browsers, key milestones, and trends shaping the web.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Myriam">
+<link rel="stylesheet" href="styles.css?v=8">
+
+
 </head>
 <body>
-    <header>
-        <h1>History of the Web & Browsers</h1>
-        <nav>
+    <header class="site-header">
+          <a href="../welcome.html" class="btn-back">← Back to Home</a>
+       <center><h1>History of the Web & Browsers</h1></center>
+        
+  <!-- Hamburger Menu Toggle (checkbox) -->
+  <!-- Hidden checkbox to toggle nav -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  
+  <!-- Hamburger icon -->
+  <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">☰</label>
+
+        <nav class="nav-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="history.html">History of the Web & Browsers</a></li>
                 <li><a href="security.html">Web Security</a></li>
                 <li><a href="mobile-first.html">Mobile-First Development</a></li>
                 <li><a href="stats.html">Internet Stats</a></li>
-                 <li><a href="csshistoryandrules.html">CSS History And Rules</a></li>
                 <li><a href="references.html">References</a></li>
             </ul>
         </nav>
@@ -35,7 +46,7 @@
             <center>
               <img src="https://cdn.osxdaily.com/wp-content/uploads/2019/02/first-web-browser-ever-worldwideweb-610x398.jpg"
                    alt="Screenshot of the WorldWideWeb browser interface from 1990"
-                   width="30%" />
+                   width="80%" />
               <figcaption>Figure 1: WorldWideWeb, the first web browser, developed by Tim Berners-Lee in 1990.</figcaption>
             </center>
         </article>
@@ -51,7 +62,7 @@
             <center>
               <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231006182501/Timeline-of-Browsers.webp"
                    alt="Timeline of browsers showing Tor, Safari, Firefox, Chrome, Edge and their launch years"
-                   width="30%" />
+                   width="80%" />
               <figcaption>Figure 2: Timeline of major browsers: Tor (2002), Safari (2003), Firefox (2004), Chrome (2008), Edge (2015).</figcaption>
             </center>
         </article>
@@ -68,7 +79,7 @@
      <center>
     <img src="https://static.startuptalky.com/2025/02/Global-Browser-Market-Share-StartupTalky-2.png"
          alt="Historical market share of alternative web browsers"
-         width="30%" />
+         width="80%" />
     <figcaption>Figure 3: Historical browser market share, showing how different browsers competed. (<a href="https://startuptalky.com/web-browsers-market-share/?utm_source=chatgpt.com">Source</a>)</figcaption>
 </center>
         </article>

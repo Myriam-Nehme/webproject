@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic Web</title>
+
+    <meta name="description" content="A student-created, semantic HTML-only project exploring the history, security, mobile-first design, and internet statistics of the modern web.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Myriam">
+   <link rel="stylesheet" href="styles.css?v=8">
+
+
+</head>
+<body>
+    <header class="site-header">
+        <a href="../welcome.html" class="btn-back">← Back to Home</a>
+       <center> <h1>Web Essentials : A Primer for the Modern Internet</h1> </center>
+        
+  <!-- Hamburger Menu Toggle (checkbox) -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
+<label for="nav-toggle" class="hamburger">☰</label>
+
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History of the Web & Browsers</a></li>
+                <li><a href="security.html">Web Security</a></li>
+                <li><a href="mobile-first.html">Mobile-First Development</a></li>
+                <li><a href="stats.html">Internet Stats</a></li>
+                <li><a href="references.html">References</a></li>
+
+     <details id="research-dropdown">
+  <summary><strong>Additional Research</strong></summary>          <!-- Detail 1 -->
+          <details>
+            <summary><strong>CSS: History & Basic Rules</strong></summary>
+            <p>CSS (Cascading Style Sheets) was first proposed by Håkon Wium Lie in 1994 to separate content (HTML) from presentation (design). The first official version, CSS1, was released in 1996, followed by CSS2 with layout features like positioning, and later CSS3, which introduced a modular system for faster and independent updates.</p>
+
+            <p>CSS works by applying rules that define how HTML elements should be styled. Each rule has a <strong>selector</strong> (which targets elements) and a <strong>declaration block</strong> (which contains property-value pairs like <code>color: red;</code>). The "cascade" in CSS means that when multiple rules apply, the most specific or latest one usually takes effect.</p>
+
+            <p>Modern CSS includes powerful tools like:</p>
+            <ul>
+              <li><strong>CSS Variables</strong> – Reusable custom values for consistent theming.</li>
+              <li><strong>Flexbox & Grid</strong> – Layout systems for building responsive designs.</li>
+              <li><strong>Aspect-Ratio</strong> – Keeps elements proportional across devices.</li>
+              <li><strong>Media Queries</strong> – Enables mobile-first and responsive styling.</li>
+              <li><strong>New Color Functions</strong> – Like <code>color-mix()</code> and <code>color-contrast()</code>.</li>
+            </ul>
+
+            <p><strong>Best Practices:</strong> Write clean, modular CSS with low specificity, avoid overly complex selectors, and use logical structure to make styles easier to maintain and scale.</p>
+          </details>
+
+          <!-- Detail 2 -->
+          <details>
+            <summary><strong>JavaScript: History & Key Milestones</strong></summary>
+            <p>JavaScript was created by Brendan Eich in 1995 while working at Netscape. Originally named Mocha, then LiveScript, it was finally renamed JavaScript to align with the popularity of Java at the time. It was developed in just 10 days to bring interactive behavior to websites.</p>
+
+            <p>In 1996, Netscape submitted JavaScript to ECMA International for standardization, leading to the first ECMAScript specification (ES1) in 1997. Over time, ECMAScript evolved: ES3 (1999) introduced features like regular expressions and exception handling, while ES5 (2009) added strict mode and JSON support.</p>
+
+            <p>The release of ES6 (ECMAScript 2015) marked a major update, adding features like:</p>
+            <ul>
+              <li><strong>Let & Const</strong> – Improved variable scoping and declarations.</li>
+              <li><strong>Arrow Functions</strong> – Shorter function syntax with lexical <code>this</code>.</li>
+              <li><strong>Promises</strong> – A cleaner way to handle asynchronous operations.</li>
+              <li><strong>Classes & Modules</strong> – Support for object-oriented and modular code.</li>
+              <li><strong>Template Literals</strong> – Enhanced string formatting with embedded expressions.</li>
+            
+
+            <p>In 2009, the introduction of Node.js allowed JavaScript to run on the server, turning it into a full-stack language. Today, JavaScript powers both client- and server-side applications, supported by frameworks like React, Angular, and Vue.</p>
+          </details>
+
+          <!-- Detail 3 -->
+          <details>
+            <summary><strong>JavaScript: Pre vs Post Incrementation</strong></summary>
+            <p>In JavaScript, the <code>++</code> operator increases a number by 1. Its position changes how it behaves:</p>
+
+            <p><strong>🔁 Pre-increment (<code>++x</code>)</strong>: Increments the value first, then returns it.</p>
+            <pre><code>let x = 5;
+let y = ++x; // x = 6, y = 6</code></pre>
+
+            <p><strong>🔁 Post-increment (<code>x++</code>)</strong>: Returns the current value, then increments.</p>
+            <pre><code>let x = 5;
+let y = x++; // x = 6, y = 5</code></pre>
+
+            <p><strong>Use Case Tip:</strong> Use <code>++x</code> when you need the updated value immediately. Use <code>x++</code> when the current value is needed before incrementing.</p>
+          </details>
+              
+                
+                
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>Welcome</h2>
+            </header>
+            <p>The web has come a long way from simple static pages to a dynamic, mobile-first digital world. This site offers a short and accessible journey through four key topics that define the internet as we know it today.</p>
+
+            <p>Whether you're curious about how the web began, how to stay safe online, why mobile-first design matters, or what the internet looks like in Lebanon and the Middle East , there's something here for you.</p>
+
+            <p>Explore the sections below to dive deeper:</p>
+
+            <ul>
+                <li><strong><a href="history.html">History of the Web & Browsers</a></strong> – Discover key milestones, trends, and the evolution of web technologies.</li>
+                <li><strong><a href="security.html">Web Security</a></strong> – Understand everyday risks and learn essential safe practices for navigating the internet.</li>
+                <li><strong><a href="mobile-first.html">Mobile-First Development</a></strong> – Learn why websites are now built with smartphones in mind, and what that means for users and developers.</li>
+                <li><strong><a href="stats.html">Internet Stats (Middle East & Lebanon)</a></strong> – Get informed with data on internet access, usage, and speed from credible sources.</li>
+            </ul>
+        </article>
+    
+
+        <br><br><br>
+    </main>
+
+    <footer>
+        <small>
+        <p>&copy; 2025 Semantic Web. All rights reserved.</p>
+        <p><em>Last updated: September 14, 2025</em></p>
+        <p>⚠️ <strong>Disclaimer:</strong> This website is intended for educational and academic use. While every effort has been made to present accurate information, users are encouraged to refer to the <a href="references.html">References</a> page for verified sources.</p>
+        </small>
+    </footer>
+</body>
+</html>

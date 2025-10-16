@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University Schedule</title>
+   <link rel="stylesheet" href="../css/styles.css" />
+     <a href="../welcome.html" class="btn-back">← Back to Home</a>
+</head>
+<body>
+
+
+  <div id="schedule">
+<div class="page-header">
+  <center><h1>Class Schedule - Fall 2025–2026</h1></center>
+</div>
+
+    <div class="schedule-grid">
+      <!-- Time Column -->
+      <div class="times">
+<!-- In the .times column -->
+ <br><br>
+<div>8am</div><div>9am</div><div>10am</div><div>11am</div>
+<div>12pm</div><div>1pm</div><div>2pm</div><div>3pm</div>
+<div>4pm</div><div>5pm</div>
+<br><br>
+<div>6pm</div>
+<br><br>
+<div>7pm</div>
+
+      </div>
+
+      <!-- Day Columns -->
+      <div class="days">
+        <div class="day-name">Monday</div>
+       
+        <div class="day-name">Tuesday</div>
+       
+        <div class="day-name">Wednesday</div>
+       
+        <div class="day-name">Thursday</div>
+      
+        <div class="day-name">Friday</div>
+      
+        <!-- Monday -->
+        <div class="day">
+          <div class="class green" style="grid-row: 7 / span 2;">
+            <a href="#math1">Mathematics for Engineers</a>
+          </div>
+          <div class="class orange" style="grid-row: 9 / span 2;">
+            <a href="#web1">Web Programming</a>
+          </div>
+        </div>
+
+        <!-- Tuesday -->
+        <div class="day">
+          <div class="class brown" style="grid-row: 1 / span 2;">
+            <a href="#network1">Network Arch & Protocols</a>
+          </div>
+          <div class="class blue" style="grid-row: 3 / span 1;">
+            <a href="#fem1">Finite Element Method</a>
+          </div>
+          <div class="class purple" style="grid-row: 5 / span 2;">
+            <a href="#nle1">Non Linear Electronics</a>
+          </div>
+        </div>
+
+        <!-- Other days go here -->
+         <!-- Wednesday -->
+<div class="day">
+  <div class="class brown" style="grid-row: 2 / span 4;">
+    <a href="#network1">Network Arch & Protocols Lab</a>
+  </div>
+</div>
+
+<!-- Thursday (same as Tuesday) -->
+<div class="day">
+  <div class="class brown" style="grid-row: 1 / span 2;">
+    <a href="#network1">Network Arch & Protocols</a>
+  </div>
+  <div class="class blue" style="grid-row: 3 / span 1;">
+    <a href="#fem1">Finite Element Method</a>
+  </div>
+  <div class="class purple" style="grid-row: 5 / span 2;">
+    <a href="#nle1">Non Linear Electronics</a>
+  </div>
+</div>
+
+<!-- Friday (same as Monday + lab) -->
+
+<div class="day">
+  <div class="class green" style="grid-row: 7 / span 2;">
+    <a href="#math1">Mathematics for Engineers</a>
+  </div>
+  <div class="class orange" style="grid-row: 9 / span 2;">
+    <a href="#web1">Web Programming</a>
+  </div>
+  <div class="class purple" style="grid-row: 11 / span 2;">
+    <a href="#nlelab">Non Linear Lab</a>
+  </div>
+</div>
+
+
+    <!-- Modals -->
+    <div id="network1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h2>Network Arch & Protocols</h2>
+        <p><strong>Instructor: Dr Zeina Awada</strong></p>
+        <p><strong>CRN:</strong> 11689</p>
+        <p><strong>Meeting Time : TTR 8:00 AM - 09:15 AM</strong></p>
+        <p><strong>Class : Block H|Room 106</strong></p>
+        <p><strong>Syllabus:</strong> This course introduces the fundamental concepts of computer networks and network architectures, focusing on network models, protocols, and real-world communication systems. Students will understand how data is transmitted, routed, and secured over various network layers.</p>
+      </div>
+    </div>
+
+    <div id="fem1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h2>Finite Element Method</h2>
+               <p><strong>Instructor: Dr Elias Farah</strong></p>
+        <p><strong>CRN:</strong> 10759</p>
+        <p><strong>Meeting Time : TTR 11:00 AM - 12:15 PM</strong></p>
+        <p><strong>Class : Block H|Room 004</strong></p>
+        <p><strong>Syllabus:</strong> This course provides an introduction to the theory and application of the Finite Element Method for solving differential equations arising in engineering and physical sciences. It emphasizes the mathematical foundation, formulation of problems, and implementation techniques.</p>
+      </div>
+    </div>
+
+    <div id="math1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h2>Math For Engineers</h2>
+     <p><strong>Instructor: Dr Rita Harb</strong></p>
+        <p><strong>CRN:</strong> 10613</p>
+        <p><strong>Meeting Time : MF 2:00 PM - 15:15 PM</strong></p>
+        <p><strong>Class : Block H|Room 107</strong></p>
+        <p><strong>Syllabus:</strong> This course covers essential mathematical tools and techniques used in engineering, including calculus, linear algebra, differential equations, complex numbers, and basic probability. Emphasis is placed on solving engineering problems using mathematical reasoning and analytical methods.</p>
+      </div>
+    </div>
+
+    <div id="web1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h2>Web Programming</h2>
+         <p><strong>Instructor: Dr Pascal Damien</strong></p>
+        <p><strong>CRN:</strong>11212</p>
+                <p><strong>Meeting Time : MF 3:00 PM - 14:45 PM</strong></p>
+        <p><strong>Class : Block H|Room 107</strong></p>
+        <p><strong>Syllabus:</strong> This course introduces the fundamental technologies used in developing modern, dynamic websites and web applications. Students will learn both frontend and backend development, covering HTML, CSS, JavaScript, server-side scripting, databases, and modern frameworks.</p>
+      </div>
+    </div>
+
+    <div id="nle1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h2>Non Linear Electronics</h2>
+         <p><strong>Instructor: Dr Joseph Al Assad</strong></p>
+        <p><strong>CRN:</strong> 10615</p>
+                <p><strong>Meeting Time : TTR 12:30 PM - 13:45 PM</strong></p>
+        <p><strong>Class : Block H|Room 107</strong></p>
+        <p><strong>Syllabus:</strong>This course introduces students to non-linear electronic devices and circuits, focusing on their analysis, design, and applications. Topics include diode and transistor circuits, waveform shaping, oscillators, amplifiers, and non-linear system modeling.</p>
+      </div>
+    </div>
+
+    <div id="nlelab" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Non Linear Electronics Lab</h2>
+     <p><strong>Instructor: Dr Roy Samia</strong></p>
+    <p><strong>CRN:</strong> 10944</p>
+       <p><strong>Meeting Time : MF 5:30 PM - 19:20 PM</strong></p>
+        <p><strong>Class : Block Hs|Room 126</strong></p>
+    <p><strong>Syllabus:</strong> To provide hands-on experience with non-linear electronic devices and circuits, enabling students to analyze, design, and test non-linear behaviors using components like diodes, transistors, and op-amps.</p>
+  </div>
+</div>
+
+    <div id="nlelab" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h2>Network Arch & Protocols Lab</h2>
+     <p><strong>Instructor: Dr Diala Abi Haidar</strong></p>
+    <p><strong>CRN:</strong> 12981</p>
+       <p><strong>Meeting Time : W 9:00 AM - 10:40 AM</strong></p>
+        <p><strong>Class : Block Hs|Room 103</strong></p>
+  </div>
+
+</body>
+</html>

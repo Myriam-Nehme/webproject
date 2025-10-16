@@ -6,18 +6,29 @@
     <meta name="description" content="Explore internet adoption, usage, speed, and infrastructure statistics in Lebanon and the Middle East.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Myriam">
+<link rel="stylesheet" href="styles.css?v=8">
+
+
 </head>
 <body>
-    <header>
-        <h1>Internet Statistics: Middle East & Lebanon</h1>
-        <nav>
+    <header class="site-header">
+          <a href="../welcome.html" class="btn-back">← Back to Home</a>
+       <center> <h1>Internet Statistics: Middle East & Lebanon</h1> </center>
+        
+  <!-- Hamburger Menu Toggle (checkbox) -->
+  <!-- Hidden checkbox to toggle nav -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  
+  <!-- Hamburger icon -->
+  <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">☰</label>
+
+        <nav class="nav-bar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="history.html">History of the Web & Browsers</a></li>
                 <li><a href="security.html">Web Security</a></li>
                 <li><a href="mobile-first.html">Mobile-First Development</a></li>
                 <li><a href="stats.html">Internet Stats</a></li>
-                 <li><a href="csshistoryandrules.html">CSS History And Rules</a></li>
                 <li><a href="references.html">References</a></li>
             </ul>
         </nav>
@@ -33,7 +44,7 @@
              <center>
     <img src="https://www.arabbarometer.org/wp-content/uploads/Q409_Online-768x549.png"
          alt="Percentage of people using the Internet in different middle eastern countries"
-         width="30%" />
+         width="80%" />
     <figcaption>Figure 1:Percentage of people using the Interent in different middle eastern countries. (<a href="https://www.arabbarometer.org/2020/09/the-mena-digital-divide/">Source</a>)</figcaption>
 </center>
     </article>

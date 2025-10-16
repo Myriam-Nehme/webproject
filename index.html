@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Semantic Web</title>
-    <meta name="description" content="A student-created, semantic HTML-only project exploring the history, security, mobile-first design, and internet statistics of the modern web.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Myriam">
+  <meta charset="UTF-8">
+  <title>Welcome Page</title>
+  <meta name="description" content="Welcome hub for HTML-only and CSS-styled versions of the Web Essentials project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Myriam">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body>
-    <header>
-        <h1>Web Essentials : A Primer for the Modern Internet</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="history.html">History of the Web & Browsers</a></li>
-                <li><a href="security.html">Web Security</a></li>
-                <li><a href="mobile-first.html">Mobile-First Development</a></li>
-                <li><a href="stats.html">Internet Stats</a></li>
-                  <li><a href="csshistoryandrules.html">CSS History And Rules</a></li>
-                <li><a href="references.html">References</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <article>
-            <header>
-                <h2>Welcome</h2>
-            </header>
-            <p>The web has come a long way from simple static pages to a dynamic, mobile-first digital world. This site offers a short and accessible journey through four key topics that define the internet as we know it today.</p>
+<header class="site-header">
+  <div class="header-inner">
+    <h1> Project HomePage</h1>
 
-            <p>Whether you're curious about how the web began, how to stay safe online, why mobile-first design matters, or what the internet looks like in Lebanon and the Middle East , there's something here for you.</p>
+    <nav class="header-links">
+      <a href="CV/index.html">CV</a>
+      <a href="schedule/index.html">Schedule</a>
+      <a href="ar/arabic-article.html">الإنترنت: جسر الهوة الرقمية وتحدي الاستدامة </a>
+    </nav>
+  </div>
 
-            <p>Explore the sections below to dive deeper:</p>
+  </header>
 
-            <ul>
-                <li><strong><a href="history.html">History of the Web & Browsers</a></strong> – Discover key milestones, trends, and the evolution of web technologies.</li>
-                <li><strong><a href="security.html">Web Security</a></strong> – Understand everyday risks and learn essential safe practices for navigating the internet.</li>
-                <li><strong><a href="mobile-first.html">Mobile-First Development</a></strong> – Learn why websites are now built with smartphones in mind, and what that means for users and developers.</li>
-                <li><strong><a href="csshistoryandrules.html">CSS History And Rules</a></strong>Explore the evolution and foundational principles of CSS</li>
-                <li><strong><a href="stats.html">Internet Stats (Middle East & Lebanon)</a></strong> – Get informed with data on internet access, usage, and speed from credible sources.</li>
-            </ul>
-        </article>
-        <br><br><br>
-    </main>
+
+
+  <main>
+<center><p>Welcome! Choose between two project versions below:</p> </center>
+<br><br>
+    <section class="welcome-cards">
+      <div class="card">
+        <h3>Project 1 </h3>
+        <p>This version of website uses only semantic HTML.</p>
+       <center><a href="no-css/index.html"> Visit Project 1</a></center> 
+        <div class="btn-wrapper">
+    <span class="status-btn completed">Completed</span>
+  </div>
+        </div>
+
+      <div class="card">
+        <h3>Project 2 </h3>
+        <p>This version adds a presentation layer using CSS , in addition to some details added to the project.</p>
+       <center> <a href="css/index.html"> Visit Project 2</a> </center>
+         
+       <div class="btn-wrapper">
+    <span class="status-btn in-progress">in-progress</span>
+  </div>
+      </div>
+    </section>
+  </main>
+
+
+
 
     <footer>
         <small>
         <p>&copy; 2025 Semantic Web. All rights reserved.</p>
-        <p><em>Last updated: September 14, 2025</em></p>
+        <p><em>Last updated: October 5,  2025</em></p>
         <p>⚠️ <strong>Disclaimer:</strong> This website is intended for educational and academic use. While every effort has been made to present accurate information, users are encouraged to refer to the <a href="references.html">References</a> page for verified sources.</p>
         </small>
     </footer>
