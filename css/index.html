@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Myriam">
    <link rel="stylesheet" href="styles.css?v=8">
-
-
+   
 </head>
 <body>
     <header class="site-header">
+      <div class="header-inner">
+               <center> <h1>Web Essentials : A Primer for the Modern Internet</h1> </center>
         <a href="../welcome.html" class="btn-back">← Back to Home</a>
-       <center> <h1>Web Essentials : A Primer for the Modern Internet</h1> </center>
-        
+      </div>
   <!-- Hamburger Menu Toggle (checkbox) -->
 <input type="checkbox" id="nav-toggle" class="nav-toggle">
 <label for="nav-toggle" class="hamburger">☰</label>
@@ -84,7 +84,34 @@ let y = x++; // x = 6, y = 5</code></pre>
             <p><strong>Use Case Tip:</strong> Use <code>++x</code> when you need the updated value immediately. Use <code>x++</code> when the current value is needed before incrementing.</p>
           </details>
               
-                
+        <!-- Detail: Latest HTML Version -->
+<details>
+  <summary><strong>The Latest Version of HTML</strong></summary>
+  <p>The latest version of HTML is <strong>HTML5</strong>, which is now the global standard for creating and structuring web pages. HTML5 introduces powerful new semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code>, which make web content more meaningful and accessible to both users and search engines.</p>
+  
+  <p>It provides native support for multimedia through the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements, eliminating the need for third-party plugins like Flash. HTML5 also includes APIs for advanced web features, including:</p>
+  <ul>
+    <li><strong>Canvas API</strong> – Draw and animate 2D graphics directly in the browser.</li>
+    <li><strong>Web Storage (localStorage/sessionStorage)</strong> – Store data on the client side for faster performance.</li>
+    <li><strong>Geolocation API</strong> – Access a user's location with permission.</li>
+    <li><strong>Drag-and-Drop API</strong> – Simplify interactive interfaces without external libraries.</li>
+  </ul>
+  
+  <p>HTML5 also improves accessibility with ARIA roles and better support for screen readers, and it is fully responsive, making it ideal for mobile and desktop devices. It continues to evolve with incremental updates that enhance performance, security, and integration with modern CSS and JavaScript technologies.</p>
+</details>
+
+<!-- Detail: Non-Latin Words in URLs -->
+<details>
+  <summary><strong>Non-Latin Words in URLs</strong></summary>
+  <p>Modern web standards allow <strong>non-Latin characters in URLs</strong> using <strong>Internationalized Resource Identifiers (IRIs)</strong>. This enables web addresses to include characters from scripts such as Arabic, Chinese, Cyrillic, Hindi, and more, making URLs more readable and culturally relevant for global users.</p>
+  
+  <p>Browsers convert these characters into a standardized ASCII-compatible format called <strong>Punycode</strong>. For example, the Cyrillic domain <code>пример.рф</code> becomes <code>xn--e1afmkfd.xn--p1ai</code> internally. This ensures that all domain names remain compatible with the Domain Name System (DNS).</p>
+  
+  <p>Using IRIs improves user experience and search engine indexing for multilingual websites. However, developers should ensure proper encoding in HTML and server configurations to avoid broken links or security issues. Tools like <code>encodeURI()</code> in JavaScript or server-side URL encoding functions can help manage this automatically.</p>
+  
+  <p><strong>Pro Tip:</strong> Always test your internationalized URLs in multiple browsers and devices to ensure proper display and functionality.</p>
+</details>
+     </details>
                 
                 </li>
             </ul>
@@ -92,7 +119,7 @@ let y = x++; // x = 6, y = 5</code></pre>
     </header>
 
     <main>
-        <article>
+       <article class="content-section">
             <header>
                 <h2>Welcome</h2>
             </header>
@@ -102,7 +129,7 @@ let y = x++; // x = 6, y = 5</code></pre>
 
             <p>Explore the sections below to dive deeper:</p>
 
-            <ul>
+            <ul class="animated-list">
                 <li><strong><a href="history.html">History of the Web & Browsers</a></strong> – Discover key milestones, trends, and the evolution of web technologies.</li>
                 <li><strong><a href="security.html">Web Security</a></strong> – Understand everyday risks and learn essential safe practices for navigating the internet.</li>
                 <li><strong><a href="mobile-first.html">Mobile-First Development</a></strong> – Learn why websites are now built with smartphones in mind, and what that means for users and developers.</li>

@@ -11,9 +11,10 @@
 </head>
 <body>
     <header class="site-header">
+        <div class="header-inner">
+                   <center><h1>Web Security: Risks and Safe Practices</h1> </center> 
           <a href="../welcome.html" class="btn-back">← Back to Home</a>
-       <center><h1>Web Security: Risks and Safe Practices</h1> </center> 
-        
+    </div>
   <!-- Hamburger Menu Toggle (checkbox) -->
   <!-- Hidden checkbox to toggle nav -->
   <input type="checkbox" id="nav-toggle" class="nav-toggle">
@@ -29,11 +30,94 @@
                 <li><a href="mobile-first.html">Mobile-First Development</a></li>
                 <li><a href="stats.html">Internet Stats</a></li>
                 <li><a href="references.html">References</a></li>
+                 <details id="research-dropdown">
+  <summary><strong>Additional Research</strong></summary>          <!-- Detail 1 -->
+          <details>
+            <summary><strong>CSS: History & Basic Rules</strong></summary>
+            <p>CSS (Cascading Style Sheets) was first proposed by Håkon Wium Lie in 1994 to separate content (HTML) from presentation (design). The first official version, CSS1, was released in 1996, followed by CSS2 with layout features like positioning, and later CSS3, which introduced a modular system for faster and independent updates.</p>
+
+            <p>CSS works by applying rules that define how HTML elements should be styled. Each rule has a <strong>selector</strong> (which targets elements) and a <strong>declaration block</strong> (which contains property-value pairs like <code>color: red;</code>). The "cascade" in CSS means that when multiple rules apply, the most specific or latest one usually takes effect.</p>
+
+            <p>Modern CSS includes powerful tools like:</p>
+            <ul>
+              <li><strong>CSS Variables</strong> – Reusable custom values for consistent theming.</li>
+              <li><strong>Flexbox & Grid</strong> – Layout systems for building responsive designs.</li>
+              <li><strong>Aspect-Ratio</strong> – Keeps elements proportional across devices.</li>
+              <li><strong>Media Queries</strong> – Enables mobile-first and responsive styling.</li>
+              <li><strong>New Color Functions</strong> – Like <code>color-mix()</code> and <code>color-contrast()</code>.</li>
+            </ul>
+
+            <p><strong>Best Practices:</strong> Write clean, modular CSS with low specificity, avoid overly complex selectors, and use logical structure to make styles easier to maintain and scale.</p>
+          </details>
+
+          <!-- Detail 2 -->
+          <details>
+            <summary><strong>JavaScript: History & Key Milestones</strong></summary>
+            <p>JavaScript was created by Brendan Eich in 1995 while working at Netscape. Originally named Mocha, then LiveScript, it was finally renamed JavaScript to align with the popularity of Java at the time. It was developed in just 10 days to bring interactive behavior to websites.</p>
+
+            <p>In 1996, Netscape submitted JavaScript to ECMA International for standardization, leading to the first ECMAScript specification (ES1) in 1997. Over time, ECMAScript evolved: ES3 (1999) introduced features like regular expressions and exception handling, while ES5 (2009) added strict mode and JSON support.</p>
+
+            <p>The release of ES6 (ECMAScript 2015) marked a major update, adding features like:</p>
+            <ul>
+              <li><strong>Let & Const</strong> – Improved variable scoping and declarations.</li>
+              <li><strong>Arrow Functions</strong> – Shorter function syntax with lexical <code>this</code>.</li>
+              <li><strong>Promises</strong> – A cleaner way to handle asynchronous operations.</li>
+              <li><strong>Classes & Modules</strong> – Support for object-oriented and modular code.</li>
+              <li><strong>Template Literals</strong> – Enhanced string formatting with embedded expressions.</li>
+            
+
+            <p>In 2009, the introduction of Node.js allowed JavaScript to run on the server, turning it into a full-stack language. Today, JavaScript powers both client- and server-side applications, supported by frameworks like React, Angular, and Vue.</p>
+          </details>
+
+          <!-- Detail 3 -->
+          <details>
+            <summary><strong>JavaScript: Pre vs Post Incrementation</strong></summary>
+            <p>In JavaScript, the <code>++</code> operator increases a number by 1. Its position changes how it behaves:</p>
+
+            <p><strong>🔁 Pre-increment (<code>++x</code>)</strong>: Increments the value first, then returns it.</p>
+            <pre><code>let x = 5;
+let y = ++x; // x = 6, y = 6</code></pre>
+
+            <p><strong>🔁 Post-increment (<code>x++</code>)</strong>: Returns the current value, then increments.</p>
+            <pre><code>let x = 5;
+let y = x++; // x = 6, y = 5</code></pre>
+
+            <p><strong>Use Case Tip:</strong> Use <code>++x</code> when you need the updated value immediately. Use <code>x++</code> when the current value is needed before incrementing.</p>
+          </details>
+          <!-- Detail: Latest HTML Version -->
+<details>
+  <summary><strong>The Latest Version of HTML</strong></summary>
+  <p>The latest version of HTML is <strong>HTML5</strong>, which is now the global standard for creating and structuring web pages. HTML5 introduces powerful new semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code>, which make web content more meaningful and accessible to both users and search engines.</p>
+  
+  <p>It provides native support for multimedia through the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements, eliminating the need for third-party plugins like Flash. HTML5 also includes APIs for advanced web features, including:</p>
+  <ul>
+    <li><strong>Canvas API</strong> – Draw and animate 2D graphics directly in the browser.</li>
+    <li><strong>Web Storage (localStorage/sessionStorage)</strong> – Store data on the client side for faster performance.</li>
+    <li><strong>Geolocation API</strong> – Access a user's location with permission.</li>
+    <li><strong>Drag-and-Drop API</strong> – Simplify interactive interfaces without external libraries.</li>
+  </ul>
+  
+  <p>HTML5 also improves accessibility with ARIA roles and better support for screen readers, and it is fully responsive, making it ideal for mobile and desktop devices. It continues to evolve with incremental updates that enhance performance, security, and integration with modern CSS and JavaScript technologies.</p>
+</details>
+
+<!-- Detail: Non-Latin Words in URLs -->
+<details>
+  <summary><strong>Non-Latin Words in URLs</strong></summary>
+  <p>Modern web standards allow <strong>non-Latin characters in URLs</strong> using <strong>Internationalized Resource Identifiers (IRIs)</strong>. This enables web addresses to include characters from scripts such as Arabic, Chinese, Cyrillic, Hindi, and more, making URLs more readable and culturally relevant for global users.</p>
+  
+  <p>Browsers convert these characters into a standardized ASCII-compatible format called <strong>Punycode</strong>. For example, the Cyrillic domain <code>пример.рф</code> becomes <code>xn--e1afmkfd.xn--p1ai</code> internally. This ensures that all domain names remain compatible with the Domain Name System (DNS).</p>
+  
+  <p>Using IRIs improves user experience and search engine indexing for multilingual websites. However, developers should ensure proper encoding in HTML and server configurations to avoid broken links or security issues. Tools like <code>encodeURI()</code> in JavaScript or server-side URL encoding functions can help manage this automatically.</p>
+  
+  <p><strong>Pro Tip:</strong> Always test your internationalized URLs in multiple browsers and devices to ensure proper display and functionality.</p>
+</details>
+                 </details>
+              
             </ul>
         </nav>
     </header>
 <main>
-    <article>
+   <article class="content-section">
         <header>
             <h2>Common Security Risks</h2>
         </header>
@@ -58,7 +142,7 @@
 
     </article>
 
-   <article>
+   <article class="content-section">
   <header>
     <h2>Safe Practices</h2>
   </header>
@@ -75,7 +159,7 @@
 </article>
 
 
-    <article>
+    <article class="content-section">
         <header>
             <h2>Security for Families and Children</h2>
         </header>
@@ -97,7 +181,7 @@
 
     </article>
 
-    <article>
+    <article class="content-section">
         <header>
             <h2>Conclusion</h2>
         </header>
