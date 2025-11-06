@@ -9,115 +9,147 @@
 
 <div id="schedule">
   <div class="page-header">
-
-    <a href="#studentInfo" class="student-btn"> Student Info</a>
-    <br>
     <center><h1>Class Schedule - Fall 2025–2026</h1></center>
     <a href="../welcome.html" class="btn-back">← Back to Home</a>
   </div>
 
+   <input type="radio" id="viewSchedule" name="view" checked hidden>
+  <input type="radio" id="viewAll" name="view" hidden>
 
+  <!-- ================= TOGGLE BUTTONS ================= -->
+  <div class="view-toggle">
+    <label for="viewSchedule">View Schedule
 
+    </label>
+    <label for="viewAll">View All
 
-  <div id="studentInfo" class="modal">
-  <div class="modal-content">
-    <a href="#" class="close">&times;</a>
-    <h2>Student Information</h2>
-    <p><strong>Name:</strong> Myriam Michel Nehme</p>
-    <p><strong>Major:</strong> Computer Engineering</p>
-    <p><strong>ID:</strong> 202303601 </p>
+    </label>
   </div>
-</div>
 
+  <!-- ============== SCHEDULE GRID (DEFAULT VIEW) ============== -->
+  <div id="scheduleView" class="toggle-view">
+    <div class="schedule-grid">
+      <!-- Time Column -->
+      <div class="times">
+    <br>
+        <div>8am</div><div>9am</div><div>10am</div><div>11am</div>
+        <div>12pm</div><div>1pm</div><div>2pm</div><div>3pm</div>
+        <div>4pm</div><div>5pm</div><div>6pm</div><div>7pm</div><div>8pm</div>
+      </div>
 
+      <!-- Day Columns -->
+      <div class="days">
+        <div class="day-name">Monday</div>
+        <div class="day-name">Tuesday</div>
+        <div class="day-name">Wednesday</div>
+        <div class="day-name">Thursday</div>
+        <div class="day-name">Friday</div>
 
+        <!-- Monday -->
+        <div class="day">
+          <div class="class green" style="grid-row: 25 / span 6;">
+            <a href="#math1">Mathematics for Engineers</a>
+          </div>
+          <div class="class orange" style="grid-row: 31 / span 6;">
+            <a href="#web1">Web Programming</a>
+          </div>
+        </div>
 
+        <!-- Tuesday -->
+        <div class="day">
+          <div class="class brown" style="grid-row: 1 / span 6;">
+            <a href="#network1">Network Arch & Protocols</a>
+          </div>
+          <div class="class blue" style="grid-row: 13 / span 6;">
+            <a href="#fem1">Finite Element Method</a>
+          </div>
+          <div class="class purple" style="grid-row: 19 / span 6;">
+            <a href="#nle1">Non Linear Electronics</a>
+          </div>
+        </div>
 
-  <div class="schedule-grid">
-    <!-- Time Column -->
-    <div class="times">
-      <br><br>
-      <div>8am</div><div>9am</div><div>10am</div><div>11am</div>
-      <div>12pm</div><div>1pm</div><div>2pm</div><div>3pm</div>
-      <div>4pm</div><div>5pm</div>
-    
-      <div>6pm</div>
-     
-      <div>7pm</div>
-      <div>8 pm
+        <!-- Wednesday -->
+        <div class="day">
+          <div class="class brown" style="grid-row: 5 / span 7;">
+            <a href="#network1">Network Arch & Protocols Lab</a>
+          </div>
+        </div>
+
+        <!-- Thursday -->
+        <div class="day">
+          <div class="class brown" style="grid-row: 1 / span 6;">
+            <a href="#network1">Network Arch & Protocols</a>
+          </div>
+          <div class="class blue" style="grid-row: 13 / span 6;">
+            <a href="#fem1">Finite Element Method</a>
+          </div>
+          <div class="class purple" style="grid-row: 19 / span 6;">
+            <a href="#nle1">Non Linear Electronics</a>
+          </div>
+        </div>
+
+        <!-- Friday -->
+        <div class="day">
+          <div class="class green" style="grid-row: 25 / span 6;">
+            <a href="#math1">Mathematics for Engineers</a>
+          </div>
+          <div class="class orange" style="grid-row: 31 / span 6;">
+            <a href="#web1">Web Programming</a>
+          </div>
+          <div class="class purple" style="grid-row: 38 / span 7;">
+            <a href="#nlelab">Non Linear Lab</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Day Columns -->
-    <div class="days">
-      <div class="day-name">Monday</div>
-      <div class="day-name">Tuesday</div>
-      <div class="day-name">Wednesday</div>
-      <div class="day-name">Thursday</div>
-      <div class="day-name">Friday</div>
-
-      <!-- Monday -->
-<div class="day">
-  <div class="class green" style="grid-row: 25 / span 6;">
-    <a href="#math1">Mathematics for Engineers</a>
   </div>
-  <div class="class orange" style="grid-row: 31 / span 6;">
-    <a href="#web1">Web Programming</a>
-  </div>
-</div>
 
+  <!-- ============== LIST VIEW (STACKED BOXES) ============== -->
+  <div id="listView" class="toggle-view">
+    <div class="class-card">
+      <h3>Network Arch & Protocols</h3>
+      <p><strong>Instructor:</strong> Dr Zeina Awada</p>
+      <p><strong>Time:</strong> TTR 8:00 AM - 9:15 AM</p>
+      <p><strong>Room:</strong> Block H | Room 106</p>
+    </div>
 
-      <!-- Tuesday -->
-      <div class="day">
-        <div class="class brown" style="grid-row: 1 / span 6;">
-          <a href="#network1">Network Arch & Protocols</a>
-        </div>
-        <div class="class blue" style="grid-row: 13 / span 6;">
-          <a href="#fem1">Finite Element Method</a>
-        </div>
-        <div class="class purple" style="grid-row: 19 / span 6;">
-          <a href="#nle1">Non Linear Electronics</a>
-        </div>
-      </div>
+    <div class="class-card">
+      <h3>Finite Element Method</h3>
+      <p><strong>Instructor:</strong> Dr Elias Farah</p>
+      <p><strong>Time:</strong> TTR 11:00 AM - 12:15 PM</p>
+      <p><strong>Room:</strong> Block H | Room 004</p>
+    </div>
 
-      <!-- Wednesday -->
-      <div class="day">
-        <div class="class brown" style="grid-row: 5 / span 7;">
-          <a href="#network1">Network Arch & Protocols Lab</a>
-        </div>
-      </div>
+    <div class="class-card">
+      <h3>Math for Engineers</h3>
+      <p><strong>Instructor:</strong> Dr Rita Harb</p>
+      <p><strong>Time:</strong> MF 2:00 PM - 3:15 PM</p>
+      <p><strong>Room:</strong> Block H | Room 107</p>
+    </div>
 
-      <!-- Thursday -->
-      <div class="day">
-        <div class="class brown" style="grid-row: 1 / span 6;">
-          <a href="#network1">Network Arch & Protocols</a>
-        </div>
-        <div class="class blue" style="grid-row: 13 / span 6;">
-          <a href="#fem1">Finite Element Method</a>
-        </div>
-        <div class="class purple" style="grid-row: 19 / span 6;">
-          <a href="#nle1">Non Linear Electronics</a>
-        </div>
-      </div>
+    <div class="class-card">
+      <h3>Web Programming</h3>
+      <p><strong>Instructor:</strong> Dr Pascal Damien</p>
+      <p><strong>Time:</strong> MF 3:00 PM - 4:45 PM</p>
+      <p><strong>Room:</strong> Block H | Room 107</p>
+    </div>
 
-      <!-- Friday -->
-<div class="day">
-  <div class="class green" style="grid-row: 25 / span 6;"> <!-- 25–30 -->
-    <a href="#math1">Mathematics for Engineers</a>
-  </div>
-  <div class="class orange" style="grid-row: 31 / span 6;"> <!-- 31–36 (now below) -->
-    <a href="#web1">Web Programming</a>
-  </div>
-  <div class="class purple" style="grid-row: 38 / span 7;">
-    <a href="#nlelab">Non Linear Lab</a>
-  </div>
-</div>
+    <div class="class-card">
+      <h3>Non Linear Electronics</h3>
+      <p><strong>Instructor:</strong> Dr Joseph Al Assad</p>
+      <p><strong>Time:</strong> TTR 12:30 PM - 1:45 PM</p>
+      <p><strong>Room:</strong> Block H | Room 107</p>
+    </div>
 
-
+    <div class="class-card">
+      <h3>Non Linear Electronics Lab</h3>
+      <p><strong>Instructor:</strong> Dr Roy Samia</p>
+      <p><strong>Time:</strong> MF 5:30 PM - 7:20 PM</p>
+      <p><strong>Room:</strong> Block Hs | Room 126</p>
     </div>
   </div>
 
-  <!-- Modals -->
+  <!-- ============== MODALS (UNCHANGED) ============== -->
   <div id="network1" class="modal">
     <div class="modal-content">
       <a href="#" class="close">&times;</a>
