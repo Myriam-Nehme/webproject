@@ -2306,7 +2306,7 @@ footer {
 html, body {
   height: 100%;
   margin: 0;
-  overflow-y: scroll; /* reserve scrollbar to prevent shifts */
+  scrollbar-gutter: stable; /* reserve scrollbar to prevent shifts */
   font-family: var(--font);
 }
 
@@ -2321,7 +2321,8 @@ html, body {
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  position: relative; /* ensure modal stays in front */
+  position: relative; 
+   padding-left: calc(2rem + (100vw - 100%))/* ensure modal stays in front */
 }
 
 #schedule h1 {
@@ -2418,11 +2419,17 @@ transform: translateY(8px);
   z-index: 2000;                  /* above all content */
   justify-content: center;
   align-items: center;
+   pointer-events: none; 
 }
 
 /* Show modal when targeted */
 #schedule .modal:target {
   display: flex;
+  pointer-events: auto; 
+  
+}
+#schedule .modal:target ~ body {
+  overflow: hidden;
 }
 
 /* Modal content */
@@ -2439,6 +2446,9 @@ transform: translateY(8px);
   overflow-y: auto; /* scroll if content is too tall */
 }
 
+
+
+
 /* Close button */
 #schedule .close {
   position: absolute;
@@ -2450,11 +2460,7 @@ transform: translateY(8px);
 }
 
 
-html, body {
-  height: 100%;
-  margin: 0;
 
-}
 
 
 @keyframes popin {
@@ -2639,3 +2645,176 @@ th:last-child, td:last-child {
         color: var(--neutral-700);
     }
   }
+
+
+  .form-box {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.form-box h3 {
+  margin-top: 0;
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 4px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #003366;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0055a5;
+}
+
+.cv-preview {
+  margin-top: 2rem;
+}
+
+.cv-box {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.cv-box h3 {
+  color: #003366;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #003366;
+  padding-bottom: 3px;
+}
+.btn-add {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.btn-add:hover {
+  background-color: var(--primary-dark);
+}
+.cv-entry input, .cv-entry textarea {
+  display: block;
+  width: 100%;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+}
+
+
+/* === Events Page Only === */
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-container {
+  max-width: var(--content-width);
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#searchBox {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 420px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--neutral-300);
+  background: var(--neutral-100);
+  transition: box-shadow var(--transition-base);
+}
+
+#searchBox:focus {
+  outline: none;
+  box-shadow: var(--shadow-glow);
+}
+
+/* Grid + Cards */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: var(--neutral-100);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--neutral-50);
+}
+
+.event-card h2 {
+  color: var(--primary-dark);
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.event-card .category {
+  font-style: italic;
+  color: var(--neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.event-card .tags {
+  color: var(--neutral-800);
+  background: var(--accent-light);
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-top: 0.4rem;
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
