@@ -2303,6 +2303,8 @@ footer {
 
 /* ========================= SCHEDULE ========================= */
 /* ========================= GLOBAL ========================= */
+/* ========================= SCHEDULE ========================= */
+/* ========================= GLOBAL ========================= */
 html, body {
   height: 100%;
   margin: 0;
@@ -2505,7 +2507,6 @@ transform: translateY(8px);
 #viewAll:checked ~ #listView {
   display: block;
 }
-
 /* -------- Simple list cards -------- */
 .class-card {
   background: #fff;
@@ -2817,4 +2818,68 @@ input, textarea {
 
 .learn-more:hover {
   text-decoration: underline;
+}
+
+/* ===== Tic Tac Toe Styles ===== */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  border: 2px solid #333;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.cell:hover,
+.cell:focus {
+  background: #f5f5f5;
+  outline: 2px solid #999;
+  transform: scale(1.03);
+}
+
+#status {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+#reset {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  background-color: #333;
+  color: white;
+  transition: background 0.2s;
+}
+
+#reset:hover {
+  background-color: #555;
+}
+
+@media (max-width: 600px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    gap: 8px;
+  }
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
 }

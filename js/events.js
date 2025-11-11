@@ -1,194 +1,435 @@
 const events = [
-  // --- Window ---
-  { 
-    name: "onload", 
-    category: "Window", 
-    description: "Fires when the page has fully loaded.", 
-    tags: "&lt;body&gt;, &lt;img&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onload.asp" 
+  // --- Window & Document ---
+  {
+    name: "onload",
+    category: "Window",
+    description: "Fires when the page or resource has fully loaded.",
+    tags: "&lt;body&gt;, &lt;img&gt;, &lt;iframe&gt;",
+    link: "https://www.w3schools.com/jsref/event_onload.asp"
   },
-  { 
-    name: "onresize", 
-    category: "Window", 
-    description: "Fires when the browser window is resized.", 
-    tags: "&lt;body&gt;, &lt;window&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onresize.asp" 
+  {
+    name: "onbeforeunload",
+    category: "Window",
+    description: "Triggered before the document is unloaded.",
+    tags: "&lt;window&gt;, &lt;body&gt;",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event"
+  },
+  {
+    name: "onunload",
+    category: "Window",
+    description: "Fires when the page is unloaded or the browser window is closed.",
+    tags: "&lt;body&gt;, &lt;window&gt;",
+    link: "https://www.w3schools.com/jsref/event_onunload.asp"
+  },
+  {
+    name: "onresize",
+    category: "Window",
+    description: "Triggered when the browser window is resized.",
+    tags: "&lt;body&gt;, &lt;window&gt;",
+    link: "https://www.w3schools.com/jsref/event_onresize.asp"
+  },
+  {
+    name: "onscroll",
+    category: "Window",
+    description: "Occurs when an element or the window is scrolled.",
+    tags: "All scrollable elements",
+    link: "https://www.w3schools.com/jsref/event_onscroll.asp"
+  },
+  {
+    name: "onhashchange",
+    category: "Window",
+    description: "Fires when the URL hash changes.",
+    tags: "&lt;window&gt;",
+    link: "https://www.w3schools.com/jsref/event_onhashchange.asp"
+  },
+  {
+    name: "onerror",
+    category: "Window",
+    description: "Triggered when an error occurs in loading an image, script, or document.",
+    tags: "Global",
+    link: "https://www.w3schools.com/jsref/event_onerror.asp"
+  },
+  {
+    name: "ononline",
+    category: "Window",
+    description: "Occurs when the browser goes online.",
+    tags: "&lt;window&gt;",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Window/online_event"
+  },
+  {
+    name: "onoffline",
+    category: "Window",
+    description: "Occurs when the browser goes offline.",
+    tags: "&lt;window&gt;",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Window/offline_event"
+  },
+  {
+    name: "onDOMContentLoaded",
+    category: "DOM",
+    description: "Fires when the HTML has been completely loaded and parsed.",
+    tags: "&lt;document&gt;",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"
   },
 
   // --- Mouse ---
-  { 
-    name: "onclick", 
-    category: "Mouse", 
-    description: "Triggered when an element is clicked.", 
-    tags: "&lt;button&gt;, &lt;div&gt;, &lt;a&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onclick.asp" 
+  {
+    name: "onclick",
+    category: "Mouse",
+    description: "Triggered when an element is clicked.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onclick.asp"
   },
-  { 
-    name: "onmouseover", 
-    category: "Mouse", 
-    description: "Triggered when the pointer hovers over an element.", 
-    tags: "All visible elements", 
-    link: "https://www.w3schools.com/jsref/event_onmouseover.asp" 
+  {
+    name: "ondblclick",
+    category: "Mouse",
+    description: "Occurs when an element is double-clicked.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_ondblclick.asp"
+  },
+  {
+    name: "onmousedown",
+    category: "Mouse",
+    description: "Occurs when a mouse button is pressed down on an element.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onmousedown.asp"
+  },
+  {
+    name: "onmouseup",
+    category: "Mouse",
+    description: "Occurs when a mouse button is released over an element.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onmouseup.asp"
+  },
+  {
+    name: "onmousemove",
+    category: "Mouse",
+    description: "Occurs when the pointer is moved within an element.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onmousemove.asp"
+  },
+  {
+    name: "onmouseover",
+    category: "Mouse",
+    description: "Occurs when the pointer is moved onto an element.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onmouseover.asp"
+  },
+  {
+    name: "onmouseout",
+    category: "Mouse",
+    description: "Occurs when the pointer is moved out of an element.",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_onmouseout.asp"
+  },
+  {
+    name: "onmouseenter",
+    category: "Mouse",
+    description: "Occurs when the pointer enters the element (no bubbling).",
+    tags: "All visible elements",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event"
+  },
+  {
+    name: "onmouseleave",
+    category: "Mouse",
+    description: "Occurs when the pointer leaves the element (no bubbling).",
+    tags: "All visible elements",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event"
+  },
+  {
+    name: "oncontextmenu",
+    category: "Mouse",
+    description: "Triggered when the right mouse button is clicked (context menu).",
+    tags: "All visible elements",
+    link: "https://www.w3schools.com/jsref/event_oncontextmenu.asp"
   },
 
   // --- Keyboard ---
-  { 
-    name: "onkeydown", 
-    category: "Keyboard", 
-    description: "Occurs when a key is pressed down.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onkeydown.asp" 
+  {
+    name: "onkeydown",
+    category: "Keyboard",
+    description: "Occurs when a key is pressed down.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, document",
+    link: "https://www.w3schools.com/jsref/event_onkeydown.asp"
   },
-  { 
-    name: "onkeyup", 
-    category: "Keyboard", 
-    description: "Occurs when a key is released after pressing.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onkeyup.asp" 
+  {
+    name: "onkeypress",
+    category: "Keyboard",
+    description: "Occurs when a key that produces a character value is pressed down.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;",
+    link: "https://www.w3schools.com/jsref/event_onkeypress.asp"
+  },
+  {
+    name: "onkeyup",
+    category: "Keyboard",
+    description: "Occurs when a key is released.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, document",
+    link: "https://www.w3schools.com/jsref/event_onkeyup.asp"
   },
 
   // --- Form ---
-  { 
-    name: "onsubmit", 
-    category: "Form", 
-    description: "Occurs when a form is submitted.", 
-    tags: "&lt;form&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onsubmit.asp" 
+  {
+    name: "onchange",
+    category: "Form",
+    description: "Fires when a form element value changes and loses focus.",
+    tags: "&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;",
+    link: "https://www.w3schools.com/jsref/event_onchange.asp"
   },
-  { 
-    name: "onchange", 
-    category: "Form", 
-    description: "Occurs when a form element value changes.", 
-    tags: "&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onchange.asp" 
+  {
+    name: "oninput",
+    category: "Form",
+    description: "Occurs when an element receives user input.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;",
+    link: "https://www.w3schools.com/jsref/event_oninput.asp"
+  },
+  {
+    name: "onsubmit",
+    category: "Form",
+    description: "Occurs when a form is submitted.",
+    tags: "&lt;form&gt;",
+    link: "https://www.w3schools.com/jsref/event_onsubmit.asp"
+  },
+  {
+    name: "onreset",
+    category: "Form",
+    description: "Occurs when a form is reset.",
+    tags: "&lt;form&gt;",
+    link: "https://www.w3schools.com/jsref/event_onreset.asp"
+  },
+  {
+    name: "onfocus",
+    category: "Form",
+    description: "Fires when an element gets focus.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;",
+    link: "https://www.w3schools.com/jsref/event_onfocus.asp"
+  },
+  {
+    name: "onblur",
+    category: "Form",
+    description: "Fires when an element loses focus.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;",
+    link: "https://www.w3schools.com/jsref/event_onblur.asp"
+  },
+  {
+    name: "oninvalid",
+    category: "Form",
+    description: "Occurs when a form element fails validation.",
+    tags: "&lt;input&gt;, &lt;form&gt;",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event"
+  },
+  {
+    name: "onselect",
+    category: "Form",
+    description: "Occurs when text inside an input or textarea is selected.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;",
+    link: "https://www.w3schools.com/jsref/event_onselect.asp"
   },
 
   // --- Clipboard ---
-  { 
-    name: "oncopy", 
-    category: "Clipboard", 
-    description: "Triggered when content is copied.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;div&gt;", 
-    link: "https://www.w3schools.com/jsref/event_oncopy.asp" 
+  {
+    name: "oncopy",
+    category: "Clipboard",
+    description: "Triggered when content is copied.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;div&gt;",
+    link: "https://www.w3schools.com/jsref/event_oncopy.asp"
   },
-  { 
-    name: "onpaste", 
-    category: "Clipboard", 
-    description: "Triggered when content is pasted.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;div&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onpaste.asp" 
+  {
+    name: "oncut",
+    category: "Clipboard",
+    description: "Triggered when content is cut.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;div&gt;",
+    link: "https://www.w3schools.com/jsref/event_oncut.asp"
+  },
+  {
+    name: "onpaste",
+    category: "Clipboard",
+    description: "Triggered when content is pasted.",
+    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;div&gt;",
+    link: "https://www.w3schools.com/jsref/event_onpaste.asp"
   },
 
   // --- Drag & Drop ---
-  { 
-    name: "ondragstart", 
-    category: "Drag & Drop", 
-    description: "Fires when dragging starts.", 
-    tags: "All draggable elements", 
-    link: "https://www.w3schools.com/jsref/event_ondragstart.asp" 
+  {
+    name: "ondragstart",
+    category: "Drag & Drop",
+    description: "Fires when dragging starts.",
+    tags: "All draggable elements",
+    link: "https://www.w3schools.com/jsref/event_ondragstart.asp"
   },
-  { 
-    name: "ondrop", 
-    category: "Drag & Drop", 
-    description: "Occurs when dragged data is dropped.", 
-    tags: "&lt;div&gt;, &lt;section&gt;, &lt;img&gt;", 
-    link: "https://www.w3schools.com/jsref/event_ondrop.asp" 
+  {
+    name: "ondrag",
+    category: "Drag & Drop",
+    description: "Occurs while an element is being dragged.",
+    tags: "All draggable elements",
+    link: "https://www.w3schools.com/jsref/event_ondrag.asp"
+  },
+  {
+    name: "ondragenter",
+    category: "Drag & Drop",
+    description: "Triggered when a dragged item enters a drop target.",
+    tags: "All drop targets",
+    link: "https://www.w3schools.com/jsref/event_ondragenter.asp"
+  },
+  {
+    name: "ondragover",
+    category: "Drag & Drop",
+    description: "Occurs when a dragged item is over a valid drop target.",
+    tags: "All drop targets",
+    link: "https://www.w3schools.com/jsref/event_ondragover.asp"
+  },
+  {
+    name: "ondragleave",
+    category: "Drag & Drop",
+    description: "Occurs when a dragged item leaves a valid drop target.",
+    tags: "All drop targets",
+    link: "https://www.w3schools.com/jsref/event_ondragleave.asp"
+  },
+  {
+    name: "ondrop",
+    category: "Drag & Drop",
+    description: "Occurs when a dragged item is dropped on a valid target.",
+    tags: "All drop targets",
+    link: "https://www.w3schools.com/jsref/event_ondrop.asp"
+  },
+  {
+    name: "ondragend",
+    category: "Drag & Drop",
+    description: "Occurs when a drag operation ends.",
+    tags: "All draggable elements",
+    link: "https://www.w3schools.com/jsref/event_ondragend.asp"
   },
 
-  // --- Touch ---
-  { 
-    name: "ontouchstart", 
-    category: "Touch", 
-    description: "Triggered when a touch point is placed on the touch surface.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_ontouchstart.asp" 
+  // --- Touch & Pointer ---
+  {
+    name: "ontouchstart",
+    category: "Touch",
+    description: "Triggered when a touch point is placed on the touch surface.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_ontouchstart.asp"
   },
-  { 
-    name: "ontouchend", 
-    category: "Touch", 
-    description: "Triggered when a touch point is removed.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_ontouchend.asp" 
+  {
+    name: "ontouchmove",
+    category: "Touch",
+    description: "Triggered when a touch point is moved along the touch surface.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_ontouchmove.asp"
   },
-
-  // --- Pointer ---
-  { 
-    name: "onpointerdown", 
-    category: "Pointer", 
-    description: "Occurs when a pointer (mouse, pen, touch) is pressed down.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_onpointerdown.asp" 
+  {
+    name: "ontouchend",
+    category: "Touch",
+    description: "Triggered when a touch point is removed.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_ontouchend.asp"
   },
-  { 
-    name: "onpointermove", 
-    category: "Pointer", 
-    description: "Occurs when a pointer moves over an element.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_onpointermove.asp" 
+  {
+    name: "onpointerdown",
+    category: "Pointer",
+    description: "Occurs when a pointer is pressed down.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_onpointerdown.asp"
+  },
+  {
+    name: "onpointermove",
+    category: "Pointer",
+    description: "Occurs when a pointer moves over an element.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_onpointermove.asp"
+  },
+  {
+    name: "onpointerup",
+    category: "Pointer",
+    description: "Occurs when a pointer is released.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_onpointerup.asp"
+  },
+  {
+    name: "onpointercancel",
+    category: "Pointer",
+    description: "Occurs when a pointer event is canceled.",
+    tags: "All elements",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/pointercancel_event"
   },
 
   // --- Media ---
-  { 
-    name: "onplay", 
-    category: "Media", 
-    description: "Fires when media starts playing.", 
-    tags: "&lt;audio&gt;, &lt;video&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onplay.asp" 
+  {
+    name: "onplay",
+    category: "Media",
+    description: "Fires when media starts playing.",
+    tags: "&lt;audio&gt;, &lt;video&gt;",
+    link: "https://www.w3schools.com/jsref/event_onplay.asp"
   },
-  { 
-    name: "onpause", 
-    category: "Media", 
-    description: "Fires when media is paused.", 
-    tags: "&lt;audio&gt;, &lt;video&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onpause.asp" 
+  {
+    name: "onpause",
+    category: "Media",
+    description: "Fires when media is paused.",
+    tags: "&lt;audio&gt;, &lt;video&gt;",
+    link: "https://www.w3schools.com/jsref/event_onpause.asp"
+  },
+  {
+    name: "onended",
+    category: "Media",
+    description: "Occurs when playback has stopped because the end of the media was reached.",
+    tags: "&lt;audio&gt;, &lt;video&gt;",
+    link: "https://www.w3schools.com/jsref/event_onended.asp"
+  },
+  {
+    name: "ontimeupdate",
+    category: "Media",
+    description: "Occurs when the current playback position has changed.",
+    tags: "&lt;audio&gt;, &lt;video&gt;",
+    link: "https://www.w3schools.com/jsref/event_ontimeupdate.asp"
+  },
+  {
+    name: "onvolumechange",
+    category: "Media",
+    description: "Occurs when the volume is changed.",
+    tags: "&lt;audio&gt;, &lt;video&gt;",
+    link: "https://www.w3schools.com/jsref/event_onvolumechange.asp"
   },
 
   // --- Animation / Transition ---
-  { 
-    name: "onanimationstart", 
-    category: "Animation/Transition", 
-    description: "Triggered when a CSS animation starts.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_animationstart.asp" 
+  {
+    name: "onanimationstart",
+    category: "Animation/Transition",
+    description: "Triggered when a CSS animation starts.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_animationstart.asp"
   },
-  { 
-    name: "ontransitionend", 
-    category: "Animation/Transition", 
-    description: "Triggered when a CSS transition finishes.", 
-    tags: "All elements", 
-    link: "https://www.w3schools.com/jsref/event_transitionend.asp" 
+  {
+    name: "onanimationend",
+    category: "Animation/Transition",
+    description: "Triggered when a CSS animation ends.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_animationend.asp"
   },
-
-  // --- DOM ---
-  { 
-    name: "onDOMContentLoaded", 
-    category: "DOM", 
-    description: "Occurs when the HTML document has been completely loaded and parsed.", 
-    tags: "&lt;document&gt;", 
-    link: "https://www.w3schools.com/jsref/event_domcontentloaded.asp" 
+  {
+    name: "onanimationiteration",
+    category: "Animation/Transition",
+    description: "Triggered when a CSS animation repeats.",
+    tags: "All elements",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animationiteration_event"
   },
-  { 
-    name: "oninput", 
-    category: "DOM", 
-    description: "Occurs when an element gets user input.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt;", 
-    link: "https://www.w3schools.com/jsref/event_oninput.asp" 
+  {
+    name: "ontransitionend",
+    category: "Animation/Transition",
+    description: "Triggered when a CSS transition finishes.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_transitionend.asp"
   },
 
-  // --- Focus ---
-  { 
-    name: "onfocus", 
-    category: "Focus", 
-    description: "Occurs when an element gains focus.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onfocus.asp" 
+  // --- Misc ---
+  {
+    name: "onwheel",
+    category: "Misc",
+    description: "Occurs when the mouse wheel is rolled up or down over an element.",
+    tags: "All elements",
+    link: "https://www.w3schools.com/jsref/event_onwheel.asp"
   },
-  { 
-    name: "onblur", 
-    category: "Focus", 
-    description: "Occurs when an element loses focus.", 
-    tags: "&lt;input&gt;, &lt;textarea&gt;, &lt;button&gt;", 
-    link: "https://www.w3schools.com/jsref/event_onblur.asp" 
+  {
+    name: "onanimationcancel",
+    category: "Misc",
+    description: "Occurs when a CSS animation is canceled before finishing.",
+    tags: "All elements",
+    link: "https://developer.mozilla.org/en-US/docs/Web/API/Element/animationcancel_event"
   }
 ];
 
