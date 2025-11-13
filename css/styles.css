@@ -2305,224 +2305,123 @@ footer {
 /* ========================= GLOBAL ========================= */
 /* ========================= SCHEDULE ========================= */
 /* ========================= GLOBAL ========================= */
-html, body {
-  height: 100%;
-  margin: 0;
-  scrollbar-gutter: stable; /* reserve scrollbar to prevent shifts */
-  font-family: var(--font);
+body { 
+    margin: 0; padding: 0; background: var(--neutral-100); font-family: var(--font);
 }
 
 /* ========================= SCHEDULE ========================= */
 #schedule {
-  margin: 2rem auto;
-  max-width: 1000px;
-  width: 1000px; /* fix width to avoid shifting */
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  position: relative; 
-   padding-left: calc(2rem + (100vw - 100%))/* ensure modal stays in front */
+  margin: 2rem auto; max-width: 1000px; width: 95%; 
+  background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md); backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5); position: relative; 
 }
-
 #schedule h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--primary-dark);
+  text-align: center; margin-bottom: 1.5rem; color: var(--primary-dark);
 }
-
+.page-header { position: relative; text-align: center; }
 #schedule .schedule-grid {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 15px;
-  margin-top: 20px;
+  display: grid; grid-template-columns: 60px 1fr; gap: 15px; margin-top: 20px;
 }
 
+/* FIX 1: Align times to the bottom of their grid cell */
 #schedule .times {
-  display: grid;
-  grid-template-rows: repeat(10, 60px);
-  text-align: right;
-  font-size: 14px;
-  color: var(--neutral-600);
-  margin-top: 25px;
+  display: grid; grid-template-rows: repeat(13, 60px); 
+  text-align: right; font-size: 14px; color: var(--neutral-600);
+  align-items: end; 
+}
+/* FIX 2: Offset the text slightly up so it doesn't overlap the line */
+#schedule .times div {
+    transform: translateY(-4px); 
+    padding-right: 5px; 
 }
 
-#schedule .days {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin-bottom: 5px; 
-}
 
+#schedule .days-container {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; 
+}
 #schedule .day-name {
-  text-align: center;
-  font-weight: bold;
-  padding: 10px 0;
-  font-size: 14px;
-  background: var(--primary-light);
-  color: var(--primary-dark);
-  border-bottom: 2px solid var(--primary);
-  border-radius: var(--radius-sm);
-  margin-bottom: 60px;
-transform: translateY(8px);
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
+  text-align: center; font-weight: bold; padding: 10px 0; font-size: 14px;
+  background: var(--primary-light); color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary); border-radius: var(--radius-sm);
+  margin-bottom: 60px; /* Offset for the grid below */
+  transform: translateY(0); /* Reset transform */
+  line-height: 1.2; display: flex; align-items: center; justify-content: center;
 }
-
 #schedule .day {
-  display: grid;
-  grid-template-rows: repeat(48, 15px);
-  border-left: 1px solid var(--neutral-200);
-  position: relative;
-  background: white;
-  border-radius: var(--radius-sm);
+  display: grid; grid-template-rows: repeat(48, 15px); 
+  position: relative; background: white; border-radius: var(--radius-sm);
+  background-image: linear-gradient(to bottom, var(--neutral-200) 1px, transparent 1px);
+  background-size: 100% 60px; 
+  overflow: hidden;
 }
-
 #schedule .class {
-  margin: 3px;
-  padding: 6px;
-  border-radius: var(--radius-sm);
-  color: white;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 500;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-  z-index: 1; /* ensure modal appears above */
+  margin: 2px; padding: 6px; border-radius: var(--radius-sm);
+  color: var(--neutral-900); font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; font-weight: 500; box-shadow: var(--shadow-sm);
+  position: relative; z-index: 1; cursor: pointer; 
 }
-
 #schedule .class a {
-  color: white;
-  text-decoration: none;
+  color: inherit; text-decoration: none; display: flex; 
+  align-items: center; justify-content: center; width: 100%; height: 100%;
 }
-
 #schedule .green { background: var(--green); }
 #schedule .orange { background: var(--orange); }
 #schedule .brown { background: var(--brown); }
 #schedule .blue { background: var(--blue); }
 #schedule .purple { background: var(--purple); }
-
 /* ========================= MODAL ========================= */
 #schedule .modal {
-  display: none;
-  position: fixed; /* stay fixed relative to viewport */
-  inset: 0;        /* top:0; left:0; right:0; bottom:0 */
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7); /* dim background */
-  backdrop-filter: blur(2px);     /* blur background */
-  z-index: 2000;                  /* above all content */
-  justify-content: center;
-  align-items: center;
-   pointer-events: none; 
+  display: none; position: fixed; inset: 0; width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(2px); z-index: 2000;                  
+  justify-content: center; align-items: center; pointer-events: none; 
 }
-
-/* Show modal when targeted */
-#schedule .modal:target {
-  display: flex;
-  pointer-events: auto; 
-  
-}
-#schedule .modal:target ~ body {
-  overflow: hidden;
-}
-
-/* Modal content */
+#schedule .modal:target { display: flex; pointer-events: auto; }
 #schedule .modal-content {
-  background: white;
-  padding: 20px;
-  width: 400px;
-  max-width: 90%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  position: relative;
-  animation: popin 0.25s ease;
-  max-height: 90vh;
-  overflow-y: auto; /* scroll if content is too tall */
+  background: white; padding: 20px; width: 400px; max-width: 90%;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  position: relative; animation: popin 0.25s ease; max-height: 90vh;
+  overflow-y: auto; 
 }
-
-
-
-
-/* Close button */
+#schedule .modal-content p { margin-bottom: 10px; line-height: 1.4; }
+#schedule .modal-content h2 { margin-bottom: 15px; color: var(--primary-dark); }
 #schedule .close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 22px;
-  text-decoration: none;
-  color: var(--neutral-800);
+  position: absolute; top: 8px; right: 12px; font-size: 22px;
+  text-decoration: none; color: var(--neutral-800);
 }
-
-
-
-
-
 @keyframes popin {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 /* -------- Toggle buttons section -------- */
-.view-toggle {
-  text-align: center;
-  margin: 1rem 0 1.5rem 0;
-}
-
+.view-toggle { text-align: center; margin: 1rem 0 1.5rem 0; }
 .view-toggle label {
-  background-color: var(--primary-light, #d0e3ff);
-  color: var(--primary-dark, #003366);
-  padding: 8px 16px;
-  margin: 0 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  background-color: var(--primary-light); color: var(--primary-dark);
+  padding: 8px 16px; margin: 0 8px; border-radius: 6px; cursor: pointer;
+  font-weight: 600; transition: all 0.2s ease; display: inline-flex;
+  align-items: center; gap: 6px;
 }
-
-.view-toggle input[type="radio"] {
-  accent-color: var(--primary, #0047ab);
+.view-toggle input[type="radio"]:checked + label {
+  background-color: var(--primary); color: white;
 }
-
 /* Hide views by default */
-.toggle-view {
-  display: none;
-}
-
+.toggle-view { display: none; }
 /* Show schedule view when checked */
-#viewSchedule:checked ~ #scheduleView {
-  display: block;
-}
-
+#viewSchedule:checked ~ #scheduleView { display: block; }
 /* Show list view when checked */
-#viewAll:checked ~ #listView {
-  display: block;
-}
+#viewAll:checked ~ #listView { display: block; }
 /* -------- Simple list cards -------- */
 .class-card {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 1rem 1.2rem;
-  margin: 0 auto 1rem auto;
-  width: 85%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: #fff; border: 1px solid var(--neutral-200); border-radius: var(--radius-md);
+  padding: 1rem 1.2rem; margin: 0 auto 1rem auto; width: 85%;
+  box-shadow: var(--shadow-sm); max-width: 600px;
 }
-
-.class-card h3 {
-  margin-top: 0;
-  color: var(--primary-dark, #003366);
+.class-card h3 { margin-top: 0; color: var(--primary-dark); }
+.details-link {
+    color: var(--primary); text-decoration: none; font-weight: 600;
+    margin-top: 10px; display: inline-block;
 }
-
 
 
 /* ========================= FOOTER ========================= */
@@ -2883,3 +2782,86 @@ input, textarea {
     font-size: 1.8rem;
   }
 }
+
+/* ========================
+   Wordle Game Styles
+   Scoped to #wordle-game
+======================== */
+
+#wordle-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #121213;
+  color: #fff;
+}
+
+#wordle-game h1 {
+  margin-bottom: 20px;
+}
+
+#wordle-game #board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+}
+
+#wordle-game .row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+#wordle-game .tile {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-color: #121213;
+  color: #fff;
+  font-weight: bold;
+}
+
+#wordle-game .correct {
+  background-color: #6aaa64 !important;
+  border-color: #6aaa64;
+}
+
+#wordle-game .present {
+  background-color: #c9b458 !important;
+  border-color: #c9b458;
+}
+
+#wordle-game .absent {
+  background-color: #3a3a3c !important;
+  border-color: #3a3a3c;
+}
+
+#wordle-game #keyboard {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 500px;
+}
+
+#wordle-game .key {
+  background: #818384;
+  border: none;
+  color: white;
+  margin: 3px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#wordle-game .key.correct { background-color: #6aaa64; }
+#wordle-game .key.present { background-color: #c9b458; }
+#wordle-game .key.absent { background-color: #3a3a3c; }
