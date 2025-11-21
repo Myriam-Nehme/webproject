@@ -24,6 +24,17 @@ function addExperience() {
   container.appendChild(div);
 }
 
+function addProject() {
+  const container = document.getElementById('projectsContainer');
+  const div = document.createElement('div');
+  div.classList.add('proj-item');
+  div.innerHTML = `
+    <input type="text" name="projectTitle" placeholder="Project or Certification Title" />
+    <textarea name="projectDetails" placeholder="Description / Key Achievements"></textarea>
+  `;
+  container.appendChild(div);
+}
+
 document.getElementById('cvForm').addEventListener('submit', function (e) {
   e.preventDefault();
   const form = e.target;
@@ -76,5 +87,16 @@ document.getElementById('cvForm').addEventListener('submit', function (e) {
     <h2>Interests</h2>
     <ul>${form.interests.value.split(',').map(i => `<li>${i.trim()}</li>`).join('')}</ul>
   </section>
+<section class="cv-section projects">
+    <h2>Projects / Certifications</h2>
+    ${[...form.querySelectorAll('#projectsContainer .proj-item')].map(proj => `
+      <div class="proj-item">
+        <h3>${proj.querySelector('[name=projectTitle]').value}</h3>
+        <p>${proj.querySelector('[name=projectDetails]').value}</p>
+      </div>
+    `).join('')}
+  </section>
+
+
   `;
 });
